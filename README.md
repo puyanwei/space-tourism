@@ -4,6 +4,8 @@ This is a frontend mentor [challenge](https://www.frontendmentor.io/challenges/s
 
 This is a good opportunity to get to know the new [app directory](https://nextjs.org/blog/next-13#new-app-directory-beta) way of doing things in Next 13
 
+(In progress) URL - https://space-tourism-umm9.vercel.app/
+
 ### Tech
 
 - Next 13 and React
