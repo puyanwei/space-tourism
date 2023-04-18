@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+const { fontFamily } = require("tailwindcss/defaultTheme")
+
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -16,6 +19,10 @@ module.exports = {
         "space-black": "#0b0d17",
         "space-light-blue": "#d0d6f9",
         "space-white": "#ffffff",
+      },
+      fontFamily: {
+        bellefair: ["var(--font-bellefair)", ...fontFamily.sans],
+        barlow: ["var(--font-barlow)", ...fontFamily.sans],
       },
     },
     plugins: [],
