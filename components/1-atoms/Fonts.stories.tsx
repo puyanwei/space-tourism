@@ -1,5 +1,5 @@
 const meta = {
-  title: "Atoms/Fonts",
+  title: "Atoms/Typography/Fonts",
 }
 
 export default meta
