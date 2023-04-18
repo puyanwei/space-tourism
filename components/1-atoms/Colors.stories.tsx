@@ -1,5 +1,5 @@
 const meta = {
-  title: "Theme Colors",
+  title: "Atoms/Theme Colors",
 }
 
 export default meta
