@@ -1,12 +1,12 @@
-import { StorybookHeading } from "../storybook -components/StorybookHeading"
+import { StorybookHeading } from "../storybook-components/StorybookHeading"
 
 const meta = {
-  title: "Atoms/Theme Colors",
+  title: "Atoms/Colors",
 }
 
 export default meta
 
-export const ThemeColors = {
+export const Colors = {
   render: () => (
     <div className="p-2 space-y-4 text-black bg-slate-200">
       <StorybookHeading>Space Black (#0b0d17)</StorybookHeading>

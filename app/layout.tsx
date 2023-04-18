@@ -5,7 +5,7 @@ const bellefair = Bellefair({ subsets: ["latin"], weight: "400", variable: "--fo
 
 const barlow = Barlow_Condensed({
   subsets: ["latin"],
-  weight: "400",
+  weight: "100",
   variable: "--font-barlow",
 })
 
