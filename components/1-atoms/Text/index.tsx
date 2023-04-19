@@ -5,5 +5,5 @@ interface TextProps extends Component {
 }
 
 export function Text({ className = "", children }: TextProps) {
-  return <p className={`font-barlow text-[16px] ${className}`}>{children}</p>
+  return <p className={`font-barlow text-[18px] ${className}`}>{children}</p>
 }

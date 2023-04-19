@@ -2,9 +2,8 @@ import { Component } from "@/shared/types"
 
 interface SubheadingProps extends Component {
   children: string
-  font: "bellefair" | "barlow"
+  theme: "bellefair" | "barlow"
 }
-
-export function Subheading({ className = "", children, font }: SubheadingProps) {
-  return <p className={`${font} ${className}`}>{children}</p>
+export function Subheading({ className = "", children, theme }: SubheadingProps) {
+  return <div className={`text-3xl font-${theme} ${className}`}>{children}</div>
 }

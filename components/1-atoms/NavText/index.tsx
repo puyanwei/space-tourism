@@ -5,9 +5,5 @@ interface NavTextProps extends Component {
 }
 
 export function NavText({ className = "", children }: NavTextProps) {
-  return (
-    <span className={`font-barlow uppercase text-[16px] tracking-[2.7px] ${className}`}>
-      {children}
-    </span>
-  )
+  return <span className={`font-barlow text-base tracking-[2.7px] ${className}`}>{children}</span>
 }
