@@ -17,10 +17,10 @@ export const NavigationBar: Story = {
       <br />
       <br />
       <div className="max-w-xs">
-        <NavBar navBar={active} className="border-b-[3px] border-white" />
+        <NavBar navBar={active} className="!border-white" />
       </div>
       <div className="max-w-xs">
-        <NavBar navBar={hover} className="border-b-[3px] border-white/50" />
+        <NavBar navBar={hover} className="!border-white/50" />
       </div>
       <div className="max-w-xs">
         <NavBar navBar={idle} />

@@ -21,14 +21,6 @@ export const Buttons: Story = {
       <div>
         <Button variant="explore">Explore</Button>
       </div>
-      <br />
-      <br />
-      <br />
-      <div>
-        <Button className="outline outline-space-gray outline-[88px]" variant="explore">
-          Explore (Hover)
-        </Button>
-      </div>
     </div>
   ),
 }

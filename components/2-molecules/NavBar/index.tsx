@@ -26,12 +26,12 @@ export function NavBar({ navBar, className }: NavBarProps) {
           const resolvedLinkText = `${navNumber}${text}`.toUpperCase()
           const linkStyle =
             activeLink === resolvedLinkText
-              ? `border-b-[3px] border-white`
-              : `hover:border-b-[3px] hover:border-white/50`
+              ? `border-white`
+              : `hover:border-white/50 border-transparent`
 
           return (
             <li
-              className={`py-8 cursor-pointer ${linkStyle} ${className}`}
+              className={`py-8 cursor-pointer border-b-[3px] ${linkStyle} ${className}`}
               key={`${index}-${text}`}
               onClick={handleClick}
             >

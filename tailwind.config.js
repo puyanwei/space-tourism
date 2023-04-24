@@ -19,7 +19,7 @@ module.exports = {
         "space-black": "#0b0d17",
         "space-light-blue": "#d0d6f9",
         "space-white": "#ffffff",
-        "space-gray": "#24262f",
+        "space-gray": "#979797",
       },
       fontFamily: {
         bellefair: ["var(--font-bellefair)", ...fontFamily.sans],
