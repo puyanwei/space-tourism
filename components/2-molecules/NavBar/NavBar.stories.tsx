@@ -13,17 +13,17 @@ type Story = StoryObj<typeof NavBar>
 export const NavigationBar: Story = {
   render: () => (
     <div className="flex flex-col gap-2">
-      <NavBar navBar={data} />
+      <NavBar data={data} currentPath="/" />
       <br />
       <br />
       <div className="max-w-xs">
-        <NavBar navBar={active} className="!border-white" />
+        <NavBar data={active} currentPath="/active" />
       </div>
       <div className="max-w-xs">
-        <NavBar navBar={hover} className="!border-white/50" />
+        <NavBar data={hover} className="!border-white/50" currentPath="/" />
       </div>
       <div className="max-w-xs">
-        <NavBar navBar={idle} />
+        <NavBar data={idle} currentPath="/" />
       </div>
     </div>
   ),

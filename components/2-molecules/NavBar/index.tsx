@@ -1,31 +1,24 @@
 import { Component } from "@/shared/types"
 import Link from "next/link"
-import { useState, MouseEvent } from "react"
 
 export interface NavBarItem {
   href: string
   text: string
 }
 interface NavBarProps extends Component {
-  navBar: NavBarItem[]
+  data: NavBarItem[]
+  currentPath: string
 }
 
-export function NavBar({ navBar, className }: NavBarProps) {
-  const [activeLink, setActiveLink] = useState("")
-
-  function handleClick(e: MouseEvent<HTMLLIElement>) {
-    const target = e.target as HTMLLIElement
-    setActiveLink(target.innerText.toUpperCase())
-  }
-
+export function NavBar({ data, currentPath, className }: NavBarProps) {
   return (
     <nav className="font-barlow text-base letter-spacing-[2.7px] uppercase">
       <ul className="flex gap-10 px-8 bg-space-black justify-evenly">
-        {navBar.map(({ href, text }, index) => {
+        {data.map(({ href, text }, index) => {
           const navNumber = index < 10 ? `0${index}` : index
-          const resolvedLinkText = `${navNumber}${text}`.toUpperCase()
+          const resolvedText = `/${text.toLowerCase()}`
           const linkStyle =
-            activeLink === resolvedLinkText
+            currentPath === resolvedText
               ? `border-white`
               : `hover:border-white/50 border-transparent`
 
@@ -33,7 +26,6 @@ export function NavBar({ navBar, className }: NavBarProps) {
             <li
               className={`py-8 cursor-pointer border-b-[3px] ${linkStyle} ${className}`}
               key={`${index}-${text}`}
-              onClick={handleClick}
             >
               <Link href={href}>
                 <b className="pr-2">{navNumber}</b>
