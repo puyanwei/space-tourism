@@ -14,6 +14,9 @@ module.exports = {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "earth-lg": "url('../public/assets/home/background-home-desktop.jpg')",
+        "earth-md": "url('../public/assets/home/background-home-tablet.jpg')",
+        "earth-sm": "url('../public/assets/home/background-home-mobile.jpg')",
       },
       colors: {
         "space-black": "#0b0d17",
