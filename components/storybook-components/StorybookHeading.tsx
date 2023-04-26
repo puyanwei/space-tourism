@@ -7,8 +7,8 @@ interface StorybookHeadingProps extends Component {
 
 export function StorybookHeading({ children, className = "", testId }: StorybookHeadingProps) {
   return (
-    <span className={`text-2xl font-light ${className}`} data-testid={testId}>
+    <h1 className={`text-2xl font-barlow text-white my-4 ${className}`} data-testid={testId}>
       {children}
-    </span>
+    </h1>
   )
 }

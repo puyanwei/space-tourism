@@ -10,10 +10,12 @@ interface NavBarProps extends Component {
   currentPath: string
 }
 
-export function NavBar({ data, currentPath, className }: NavBarProps) {
+export function NavBar({ data, currentPath, className = "" }: NavBarProps) {
   return (
-    <nav className="font-barlow text-base letter-spacing-[2.7px] uppercase">
-      <ul className="flex gap-10 px-8 bg-space-black justify-evenly">
+    <nav
+      className={`font-barlow text-base letter-spacing-[2.7px] uppercase text-white backdrop-blur-sm bg-space-gray/10 ${className}`}
+    >
+      <ul className="flex gap-10 px-8 justify-evenly">
         {data.map(({ href, text }, index) => {
           const navNumber = index < 10 ? `0${index}` : index
           const resolvedText = `/${text.toLowerCase()}`
@@ -24,7 +26,7 @@ export function NavBar({ data, currentPath, className }: NavBarProps) {
 
           return (
             <li
-              className={`py-8 cursor-pointer border-b-[3px] ${linkStyle} ${className}`}
+              className={`py-8 cursor-pointer border-b-[3px] ${linkStyle}`}
               key={`${index}-${text}`}
             >
               <Link href={href}>

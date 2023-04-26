@@ -18,5 +18,5 @@ interface HeadingProps extends Component {
 export function Heading({ className = "", children, level }: HeadingProps) {
   const Tag = level
 
-  return <Tag className={`${headingVariants[level]} ${className}`}>{children}</Tag>
+  return <Tag className={`${headingVariants[level]} text-white ${className}`}>{children}</Tag>
 }

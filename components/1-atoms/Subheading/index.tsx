@@ -5,5 +5,5 @@ interface SubheadingProps extends Component {
   theme: "bellefair" | "barlow"
 }
 export function Subheading({ className = "", children, theme }: SubheadingProps) {
-  return <div className={`text-3xl font-${theme} ${className}`}>{children}</div>
+  return <div className={`text-3xl font-${theme} text-white ${className}`}>{children}</div>
 }
