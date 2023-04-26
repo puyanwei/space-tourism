@@ -1,6 +1,7 @@
 import { NavBar } from "@/components/2-molecules/NavBar"
 import "./globals.css"
 import { Bellefair, Barlow_Condensed } from "next/font/google"
+import { ReactNode } from "react"
 
 const bellefair = Bellefair({ subsets: ["latin"], weight: "400", variable: "--font-bellefair" })
 
@@ -22,11 +23,11 @@ const navBar = [
   { href: "/technology", text: "Technology" },
 ]
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${bellefair.variable} ${barlow.variable}`}>
       <body>
-        <NavBar data={navBar} currentPath="/" />
+        <NavBar className="fixed right-0 top-10" data={navBar} currentPath="/" />
         {children}
       </body>
     </html>

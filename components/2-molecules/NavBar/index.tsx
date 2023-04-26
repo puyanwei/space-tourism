@@ -13,7 +13,7 @@ interface NavBarProps extends Component {
 export function NavBar({ data, currentPath, className = "" }: NavBarProps) {
   return (
     <nav
-      className={`font-barlow text-base letter-spacing-[2.7px] uppercase text-white backdrop-blur-sm bg-space-gray/10 ${className}`}
+      className={`font-barlow text-base letter-spacing-[2.7px] uppercase text-white backdrop-blur-sm bg-space-gray/10 w-[55%] px-20 ${className}`}
     >
       <ul className="flex gap-10 px-8 justify-evenly">
         {data.map(({ href, text }, index) => {
