@@ -5,7 +5,7 @@ const headingVariants = {
   h2: "font-bellefair text-[100px]",
   h3: "font-bellefair text-[56px]",
   h4: "font-bellefair text-[32px]",
-  h5: "font-barlow text-[28px] tracking-[4.75px]",
+  h5: "font-primary text-[28px] tracking-[4.75px]",
 } as const
 
 type headingLevel = keyof typeof headingVariants

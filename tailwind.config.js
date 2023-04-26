@@ -26,8 +26,8 @@ module.exports = {
         "space-dark-gray": "#35373f",
       },
       fontFamily: {
-        bellefair: ["var(--font-bellefair)", ...fontFamily.sans],
-        barlow: ["var(--font-barlow)", ...fontFamily.sans],
+        primary: "var(--font-barlow)",
+        serif: "var(--font-bellefair)",
       },
     },
     plugins: [],

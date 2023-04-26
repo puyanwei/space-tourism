@@ -25,9 +25,9 @@ const navBar = [
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={`${bellefair.variable} ${barlow.variable}`}>
+    <html lang="en" className={`${barlow.variable} ${bellefair.variable}`}>
       <body>
-        <NavBar className="fixed right-0 top-10" data={navBar} currentPath="/" />
+        <NavBar className="fixed right-0 top-10 w-[55%] px-20" data={navBar} currentPath="/" />
         {children}
       </body>
     </html>

@@ -11,7 +11,7 @@ export function Tab({ className, buttonTextClassName = "", children, active = fa
   const activeStyle = active ? `border-white` : `border-transparent hover:border-space-gray`
   return (
     <button
-      className={`uppercase font-barlow font-semibold tracking-[2.7px] text-white ${className}`}
+      className={`uppercase font-primary font-semibold tracking-[2.7px] text-white ${className}`}
     >
       <span className={`py-2 border-b-[3px] ${buttonTextClassName} ${activeStyle}`}>
         {children}
