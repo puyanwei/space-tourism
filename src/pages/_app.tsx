@@ -17,6 +17,7 @@ const navBar = [
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
+
       <NavBar className="fixed right-0 top-10 w-[55%] px-20" data={navBar} currentPath="/" />
       <Component {...pageProps} />
     </>

@@ -1,7 +1,13 @@
+import { Heading } from "@/components/1-atoms/Heading"
+import { Subheading } from "@/components/1-atoms/Subheading"
+
 export default function Home() {
   return (
-    <main className="h-screen bg-scroll bg-cover font-primary bg-earth-sm md:bg-earth-md lg:bg-earth-lg">
-      Home
-    </main>
+    <div className="h-screen bg-scroll bg-black bg-cover font-primary bg-earth-sm md:bg-earth-md lg:bg-earth-lg">
+      <main>
+        <Subheading theme="barlow">So, you want to travel to</Subheading>
+        <Heading level="h1">Space</Heading>
+      </main>
+    </div>
   )
 }
