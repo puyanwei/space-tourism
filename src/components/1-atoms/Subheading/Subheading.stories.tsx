@@ -12,11 +12,11 @@ type Story = StoryObj<typeof Subheading>
 export const Subheadings: Story = {
   render: () => (
     <div className="space-y-2">
-      <Subheading className="subheading" theme="bellefair">
+      <Subheading className="subheading" theme="serif">
         384,400 KM
       </Subheading>
       <br />
-      <Subheading className="subheading" theme="barlow">
+      <Subheading className="subheading" theme="primary">
         AVG. DISTANCE
       </Subheading>
     </div>
