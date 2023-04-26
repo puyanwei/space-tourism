@@ -6,11 +6,6 @@ module.exports = {
   content: [`./src/**/*.{tsx, ts}`],
   theme: {
     extend: {
-      backgroundImage: {
-        "earth-lg": "url('/assets/home/background-home-desktop.jpg')",
-        "earth-md": "url('/assets/home/background-home-tablet.jpg')",
-        "earth-sm": "url('/assets/home/background-home-mobile.jpg')",
-      },
       colors: {
         "space-black": "#0b0d17",
         "space-light-blue": "#d0d6f9",

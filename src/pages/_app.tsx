@@ -21,8 +21,8 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <div className="fixed left-14 top-14">
         <IconWrapper icon={<Logo />} />
-        <div className="fixed border-[1px] border-space-dark-gray top-[85px] left-[13%] w-[35%]" />
       </div>
+      <div className="z-10 fixed border-[1px] border-space-dark-gray top-[85px] left-[13%] w-[35%]" />
       <NavBar className="fixed right-0 top-10 w-[55%] px-20" data={navBar} currentPath="/" />
       <Component {...pageProps} />
     </>

@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .bg-earth-lg {
+    background-image: url("/assets/home/background-home-desktop.jpg");
+  }
+  .bg-earth-md {
+    background-image: url("/assets/home/background-home-tablet.jpg");
+  }
+  .bg-earth-sm {
+    background-image: url("/assets/home/background-home-mobile.jpg");
+  }
+}
