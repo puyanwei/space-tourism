@@ -7,9 +7,9 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        "earth-lg": "url('/assets/home/background-home-desktop.jpg')",
-        "earth-md": "url('/assets/home/background-home-tablet.jpg')",
-        "earth-sm": "url('/assets/home/background-home-mobile.jpg')",
+        "earth-lg": "url('/public/assets/home/background-home-desktop.jpg')",
+        "earth-md": "url('/public/assets/home/background-home-tablet.jpg')",
+        "earth-sm": "url('/public/assets/home/background-home-mobile.jpg')",
       },
       colors: {
         "space-black": "#0b0d17",
