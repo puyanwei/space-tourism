@@ -1,8 +1,8 @@
+import { BackgroundImage } from "@/components/1-atoms/BackgroundImage"
 import { Button } from "@/components/1-atoms/Button"
 import { Heading } from "@/components/1-atoms/Heading"
 import { Subheading } from "@/components/1-atoms/Subheading"
 import { Text } from "@/components/1-atoms/Text"
-import Image from "next/image"
 import { useWindowSize } from "src/hooks/useWindowSize"
 
 type Urls = keyof typeof backgroundImageMap
@@ -28,12 +28,7 @@ export default function Home() {
 
   return (
     <div className={`grid h-screen grid-cols-2 grid-rows-2 bg-scroll font-primary`}>
-      <Image
-        className="fixed pointer-events-none -z-10"
-        src={backgroundImageUrl}
-        alt="background image of earth from space"
-        fill
-      />
+      <BackgroundImage url={backgroundImageUrl} />
       <main className="row-start-2 pl-[165px]">
         <Subheading theme="primary">So, you want to travel to</Subheading>
         <Heading level="h1">Space</Heading>
