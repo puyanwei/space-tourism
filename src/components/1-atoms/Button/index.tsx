@@ -4,7 +4,7 @@ import { ReactNode } from "react"
 const styleMap = {
   default: `rounded-2xl text-white bg-black font-primary text-base px-6 py-3 font-bold hover:bg-white hover:text-black`,
   explore: `rounded-full text-space-black bg-white font-serif aspect-square h-[274px] text-[32px] outline outline-0 hover:outline-[88px] outline-space-gray`,
-}
+} as const
 
 interface ButtonProps extends Component {
   children: ReactNode
