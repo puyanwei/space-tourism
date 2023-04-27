@@ -18,7 +18,8 @@ const navBar = [
 ]
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const currentPath = usePathname()
+  const currentPath = usePathname() ?? ""
+
   return (
     <>
       <div className="fixed left-14 top-14">
