@@ -3,6 +3,7 @@ import "./styles.css"
 import type { AppProps } from "next/app"
 import { Logo } from "@/components/1-atoms/Icons/Logo"
 import { IconWrapper } from "@/components/1-atoms/Icons"
+import { usePathname } from "next/navigation"
 
 export const metadata = {
   title: "Space Tourism",
@@ -17,13 +18,18 @@ const navBar = [
 ]
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const currentPath = usePathname()
   return (
     <>
       <div className="fixed left-14 top-14">
         <IconWrapper icon={<Logo />} />
       </div>
       <div className="z-10 fixed border-[1px] border-space-dark-gray top-[85px] left-[13%] w-[35%]" />
-      <NavBar className="fixed right-0 top-10 w-[55%] px-20" data={navBar} currentPath="/" />
+      <NavBar
+        className="fixed right-0 top-10 w-[55%] px-20"
+        data={navBar}
+        currentPath={currentPath}
+      />
       <Component {...pageProps} />
     </>
   )

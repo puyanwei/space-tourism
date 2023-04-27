@@ -19,8 +19,9 @@ export function NavBar({ data, currentPath, className = "" }: NavBarProps) {
         {data.map(({ href, text }, index) => {
           const navNumber = index < 10 ? `0${index}` : index
           const resolvedText = `/${text.toLowerCase()}`
+          const resolvedCurrentPath = currentPath === "/" ? "/home" : currentPath
           const linkStyle =
-            currentPath === resolvedText
+            resolvedCurrentPath === resolvedText
               ? `border-white`
               : `hover:border-white/50 border-transparent`
 
