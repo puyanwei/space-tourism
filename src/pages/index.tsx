@@ -1,3 +1,5 @@
+import { useRouter } from "next/router"
+
 import { BackgroundImage } from "@/components/1-atoms/BackgroundImage"
 import { Button } from "@/components/1-atoms/Button"
 import { Heading } from "@/components/1-atoms/Heading"
@@ -15,13 +17,18 @@ const backgroundImageMap = {
 } as const
 
 export default function Home() {
+  const router = useRouter()
   const { width } = useWindowSize()
   if (!width) return null
 
   function resolveBackgroundImage(width: number): BackgroundImageUrl {
-    if (width > 1440) return backgroundImageMap.lg
-    if (width > 768) return backgroundImageMap.md
+    if (width > 1440) return backgroundImageMap["lg"]
+    if (width > 768) return backgroundImageMap["md"]
     return backgroundImageMap.sm
+  }
+
+  function handleClick() {
+    router.push("/destination")
   }
 
   const backgroundImageUrl = resolveBackgroundImage(width)
@@ -39,7 +46,7 @@ export default function Home() {
         </Text>
       </main>
       <div className="pl-[400px] pt-[100px] row-start-2">
-        <Button className="" variant="explore">
+        <Button variant="explore" onClick={handleClick}>
           Explore
         </Button>
       </div>

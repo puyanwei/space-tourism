@@ -14,7 +14,13 @@ This is a good opportunity to get to know the new [app directory](https://nextjs
 - Storybook for component library
 - Deployed with Vercel
 
-### Issues with App Directory structure
+### Issues
+
+#### Using Next 13 App folder (beta)
 
 - Multiple font loading does not seem to work with tailwind. The custom variable names do not seem to get picked up in `tailwind.config`
-- RootLayout (`Layout.tsx` on the root of app) contains the server loading of fonts, but adding Navbar into it prevents passing in current url prop so that current link can be highlighted. This needs to be done client side, so you cannot do both.
+- RootLayout (`Layout.tsx` on the root of app) contains the server loading of fonts, but adding Navbar into it prevents passing in current url prop so that current link can be highlighted. This needs to be done client side, and there is no way to load via server and client on the same file.
+
+#### Other Issues
+
+- Storybook is unable to load if tailwind is using a reference to an asset in the public folder. In my instance, a reference for a background image which ommited the public folder in the url confuses Storybook into trying to find this when loading its css. Using the config `staticDirs: ["../public"],` in `main.t` doesn't seem to work.
