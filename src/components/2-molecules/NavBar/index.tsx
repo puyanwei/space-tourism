@@ -1,4 +1,4 @@
-import { Component } from "@/shared/types"
+import { Component, Page, PageUrls } from "@/shared/types"
 import Link from "next/link"
 
 export interface NavBarItem {
@@ -7,7 +7,7 @@ export interface NavBarItem {
 }
 interface NavBarProps extends Component {
   data: NavBarItem[]
-  currentPath: string
+  currentPath: PageUrls
 }
 
 export function NavBar({ data, currentPath, className = "" }: NavBarProps) {
@@ -26,15 +26,12 @@ export function NavBar({ data, currentPath, className = "" }: NavBarProps) {
               : `hover:border-white/50 border-transparent`
 
           return (
-            <li
-              className={`py-8 cursor-pointer border-b-[3px] ${linkStyle}`}
-              key={`${index}-${text}`}
-            >
-              <Link href={href}>
+            <Link href={href} key={`${index}-${text}`}>
+              <li className={`py-8 cursor-pointer border-b-[3px] ${linkStyle}`}>
                 <b className="pr-2">{navNumber}</b>
                 {text}
-              </Link>
-            </li>
+              </li>
+            </Link>
           )
         })}
       </ul>

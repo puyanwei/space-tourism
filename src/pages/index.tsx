@@ -6,36 +6,17 @@ import { Heading } from "@/components/1-atoms/Heading"
 import { Subheading } from "@/components/1-atoms/Subheading"
 import { Text } from "@/components/1-atoms/Text"
 import { useWindowSize } from "src/hooks/useWindowSize"
-
-type Urls = keyof typeof backgroundImageMap
-type BackgroundImageUrl = (typeof backgroundImageMap)[Urls]
-
-const backgroundImageMap = {
-  lg: "/assets/home/background-home-desktop.jpg",
-  md: "/assets/home/background-home-tablet.jpg",
-  sm: "/assets/home/background-home-mobile.jpg",
-} as const
+import { resolveBackgroundImage } from "@/shared/helpers"
 
 export default function Home() {
   const router = useRouter()
-  const { width } = useWindowSize()
-  if (!width) return null
-
-  function resolveBackgroundImage(width: number): BackgroundImageUrl {
-    if (width > 1440) return backgroundImageMap["lg"]
-    if (width > 768) return backgroundImageMap["md"]
-    return backgroundImageMap.sm
-  }
 
   function handleClick() {
     router.push("/destination")
   }
 
-  const backgroundImageUrl = resolveBackgroundImage(width)
-
   return (
     <div className={`grid h-screen grid-cols-2 grid-rows-2 bg-scroll font-primary`}>
-      <BackgroundImage url={backgroundImageUrl} />
       <main className="row-start-2 pl-[165px]">
         <Subheading theme="primary">So, you want to travel to</Subheading>
         <Heading level="h1">Space</Heading>
