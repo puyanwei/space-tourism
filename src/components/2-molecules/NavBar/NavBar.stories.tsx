@@ -14,17 +14,6 @@ export const NavigationBar: Story = {
   render: () => (
     <div className="flex flex-col gap-2">
       <NavBar data={data} currentPath="/" />
-      <br />
-      <br />
-      <div className="max-w-xs">
-        <NavBar data={active} currentPath="/active" />
-      </div>
-      <div className="max-w-xs">
-        <NavBar data={hover} className="!border-white/50" currentPath="/" />
-      </div>
-      <div className="max-w-xs">
-        <NavBar data={idle} currentPath="/" />
-      </div>
     </div>
   ),
 }
