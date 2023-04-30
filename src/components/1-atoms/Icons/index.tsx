@@ -5,5 +5,5 @@ export interface IconWrapperProps extends Component {
 }
 
 export function IconWrapper({ className = ``, icon }: IconWrapperProps) {
-  return <span className={`flex items-center pl-1 ${className}`}>{icon}</span>
+  return <span className={`flex pl-1 ${className}`}>{icon}</span>
 }

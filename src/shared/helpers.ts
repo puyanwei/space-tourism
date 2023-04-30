@@ -7,3 +7,8 @@ export function resolveBackgroundImage(width: number, page: PageUrls): Backgroun
   if (width > tabletSize) return backgroundImageMap[resolvedPage]["md"]
   return backgroundImageMap[resolvedPage]["sm"]
 }
+
+export function warnAndReturnNull(warning: string) {
+  console.warn(warning)
+  return null
+}

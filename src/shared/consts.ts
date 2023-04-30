@@ -2,6 +2,13 @@ export const desktopSize = 1440
 export const tabletSize = 768
 export const mobileSize = 640
 
+export const navbar = [
+  { href: "/", text: "Home" },
+  { href: "/destination", text: "Destination" },
+  { href: "/crew", text: "Crew" },
+  { href: "/technology", text: "Technology" },
+]
+
 export const backgroundImageMap = {
   home: {
     lg: "/assets/home/background-home-desktop.jpg",
