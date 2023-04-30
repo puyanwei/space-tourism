@@ -1,3 +1,7 @@
+export const desktopSize = 1440
+export const tabletSize = 768
+export const mobileSize = 640
+
 export const backgroundImageMap = {
   home: {
     lg: "/assets/home/background-home-desktop.jpg",
