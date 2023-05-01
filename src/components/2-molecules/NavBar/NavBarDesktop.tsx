@@ -17,12 +17,15 @@ export function NavBarDesktop({ data, currentPath, className = "" }: NavBarProps
               : `hover:border-white/50 border-transparent`
 
           return (
-            <Link href={href} key={`${index}-${text}`}>
-              <li className={`py-8 cursor-pointer border-b-[3px] ${linkStyle}`}>
+            <li
+              className={`py-8 cursor-pointer border-b-[3px] ${linkStyle}`}
+              key={`${index}-${text}`}
+            >
+              <Link href={href}>
                 <b className="pr-2">{navNumber}</b>
                 {text}
-              </li>
-            </Link>
+              </Link>
+            </li>
           )
         })}
       </ul>

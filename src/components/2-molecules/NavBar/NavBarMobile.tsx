@@ -3,6 +3,8 @@ import { useState } from "react"
 import { Button } from "@/components/1-atoms/Button"
 import { CloseIcon } from "@/components/1-atoms/Icons/CloseIcon"
 import { HamburgerIcon } from "@/components/1-atoms/Icons/HamburgerIcon"
+import { Component } from "@/shared/types"
+import { data } from "autoprefixer"
 import { NavBarProps } from "."
 
 export function NavBarMobile({ data, currentPath, className = "" }: NavBarProps) {
@@ -32,7 +34,7 @@ export function NavBarMobile({ data, currentPath, className = "" }: NavBarProps)
 
       {isMenuOpen && (
         <nav
-          className={`pt-[118px] font-primary text-base letter-spacing-[2.7px] uppercase text-white backdrop-blur-sm bg-space-gray/10 h-screen absolute right-0 top-0 w-[60%] z-0 ${className}`}
+          className={`pt-[118px] font-primary text-base letter-spacing-[2.7px] uppercase text-white backdrop-blur-sm bg-space-gray/10 h-screen md:h-[90px] absolute right-0 top-0 w-[60%] z-0 ${className}`}
         >
           <ul className="flex flex-col">
             {data.map(({ href, text }, index) => {
@@ -44,7 +46,10 @@ export function NavBarMobile({ data, currentPath, className = "" }: NavBarProps)
 
               return (
                 <Link href={href} key={`${index}-${text}`}>
-                  <li className={`px-8 py-4  cursor-pointer border-r-[3px] ${linkStyle}`}>
+                  <li
+                    className={`px-8 py-4  cursor-pointer border-r-[3px] ${linkStyle}`}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
                     <b className="pr-2">{navNumber}</b>
                     {text}
                   </li>
