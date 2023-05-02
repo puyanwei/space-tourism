@@ -1,7 +1,7 @@
 import { Component } from "@/shared/types"
 
 const headingVariants = {
-  h1: "font-serif text-[150px]",
+  h1: "font-serif text-[80px] md:text-[150px]",
   h2: "font-serif text-[100px]",
   h3: "font-serif text-[56px]",
   h4: "font-serif text-[32px]",
