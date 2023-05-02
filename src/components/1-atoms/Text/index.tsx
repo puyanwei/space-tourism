@@ -5,5 +5,9 @@ interface TextProps extends Component {
 }
 
 export function Text({ className = "", children }: TextProps) {
-  return <p className={`font-primary text-[18px] text-white ${className}`}>{children}</p>
+  return (
+    <p className={`font-primary text-[18px] text-white leading-8 tracking-wider ${className}`}>
+      {children}
+    </p>
+  )
 }

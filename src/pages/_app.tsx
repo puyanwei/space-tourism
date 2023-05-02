@@ -27,7 +27,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <div className="relative">
       <BackgroundImage url={backgroundImageUrl} />
       <Logo className="fixed left-14 top-14 className scale-[.835] md:scale-100" />
-      <div className="z-10 fixed border-[1px] border-space-dark-gray top-[85px] left-[13%] w-[35%]" />
+      <div className="z-10 fixed border-[1px] border-space-dark-gray top-[85px] left-[13%] w-[35%] hidden lg:block" />
       <NavBar data={navbar} currentPath={currentPath as PageUrls} />
       <Component {...pageProps} />
     </div>
