@@ -26,11 +26,17 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <div className="relative">
       <BackgroundImage url={backgroundImageUrl} />
+      <Line />
       <Logo className="fixed left-6 top-6 md:left-14 md:top-14 scale-[.835] md:scale-100" />
-      <div className="z-10 fixed border-[1px] border-space-dark-gray top-[85px] left-[13%] w-[35%] hidden lg:block" />
       <NavBar data={navbar} currentPath={currentPath as PageUrls} />
       <Component {...pageProps} />
     </div>
+  )
+}
+
+function Line() {
+  return (
+    <span className="z-10 fixed border-[1px] border-space-dark-gray top-[85px] left-[11%] w-[26%] hidden lg:block" />
   )
 }
 
