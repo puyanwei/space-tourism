@@ -1,4 +1,4 @@
-export const desktopSize = 1440
+export const desktopSize = 1024
 export const tabletSize = 768
 export const mobileSize = 640
 
