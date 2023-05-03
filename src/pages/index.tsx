@@ -4,14 +4,18 @@ import { Button } from "@/components/1-atoms/Button"
 import { Heading } from "@/components/1-atoms/Heading"
 import { Subheading } from "@/components/1-atoms/Subheading"
 import { Text } from "@/components/1-atoms/Text"
+import useSWR from "swr"
 
 export default function Home() {
+  const { data, error, isLoading } = useSWR("/api", (url) => fetch(url).then((res) => res.json()))
+
   const router = useRouter()
 
   function handleClick() {
     router.push("/destination")
   }
 
+  console.log({ data })
   return (
     <div className="flex flex-col lg:grid h-screen lg:grid-cols-2 lg:grid-rows-2 bg-scroll font-primary text-center justify-items-center lg:place-items-center pt-16 lg:pb-[131px] lg:text-left md:pt-[225px] px-4">
       <main className="lg:row-start-2 lg:pl-[165px]">
