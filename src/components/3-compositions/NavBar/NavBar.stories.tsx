@@ -3,7 +3,7 @@ import { NavBar } from "."
 import { data, active, hover, idle } from "./consts"
 
 const meta: Meta<typeof NavBar> = {
-  title: "Molecules/Navigation Bar",
+  title: "Compositions/Navigation Bar",
   component: NavBar,
 }
 

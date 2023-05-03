@@ -9,6 +9,6 @@ const meta: Meta<typeof BackgroundImage> = {
 export default meta
 type Story = StoryObj<typeof BackgroundImage>
 
-export const TheBackgroundImage: Story = {
+export const BackgroundImages: Story = {
   render: () => <BackgroundImage url={"assets/home/background-home-desktop.jpg"} />,
 }

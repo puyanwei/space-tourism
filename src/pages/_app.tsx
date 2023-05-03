@@ -1,4 +1,4 @@
-import { NavBar } from "@/components/2-molecules/NavBar"
+import { NavBar } from "@/components/3-compositions/NavBar"
 import "./styles.css"
 import type { AppProps } from "next/app"
 import { Logo } from "@/components/1-atoms/Icons/Logo"
