@@ -5,15 +5,25 @@ interface TabProps extends Component {
   children: ReactNode
   active?: boolean
   buttonTextClassName?: string
+  onClick: () => void
 }
 
-export function Tab({ className, buttonTextClassName = "", children, active = false }: TabProps) {
+export function Tab({
+  className,
+  buttonTextClassName = "",
+  children,
+  active = false,
+  onClick,
+}: TabProps) {
   const activeStyle = active ? `border-white` : `border-transparent hover:border-space-gray`
   return (
     <button
       className={`uppercase font-primary font-semibold tracking-[2.7px] text-white ${className}`}
     >
-      <span className={`py-2 border-b-[3px] ${buttonTextClassName} ${activeStyle}`}>
+      <span
+        className={`py-2 border-b-[3px] ${buttonTextClassName} ${activeStyle}`}
+        onClick={onClick}
+      >
         {children}
       </span>
     </button>
