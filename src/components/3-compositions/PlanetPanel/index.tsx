@@ -38,8 +38,6 @@ export function PlanetPanel({ data }: PlanetPanelProps) {
     images: { png, webp },
   } = data[currentIndex]
 
-  const isTabNameSameAsCurrentIndexName = data[currentIndex].name === name
-
   return (
     <div className="grid grid-cols-2 text-white ">
       <NextImage src={webp} fallbackSrc={png} alt={name} width="445" height="445" />
@@ -47,7 +45,7 @@ export function PlanetPanel({ data }: PlanetPanelProps) {
         <TabGroup className="space-x-12">
           {data.map(({ name }, index) => (
             <Tab
-              active={isTabNameSameAsCurrentIndexName}
+              active={data[currentIndex].name === name}
               key={`${name}-${index}`}
               onClick={() => handleOnClick(index)}
             >
