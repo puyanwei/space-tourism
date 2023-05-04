@@ -22,7 +22,7 @@ interface PlanetPanelProps extends Component {
   data: Destination[]
 }
 
-export function PlanetPanel({ data }: PlanetPanelProps) {
+export function PlanetPanel({ data, className = "" }: PlanetPanelProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
   if (!data.length) return warnAndReturnNull("data is empty")
 
@@ -39,7 +39,7 @@ export function PlanetPanel({ data }: PlanetPanelProps) {
   } = data[currentIndex]
 
   return (
-    <div className="grid grid-cols-2 text-white ">
+    <div className={`grid grid-cols-2 text-white ${className}`}>
       <NextImage src={webp} fallbackSrc={png} alt={name} width="445" height="445" />
       <div className="max-w-[445px]">
         <TabGroup className="space-x-12">

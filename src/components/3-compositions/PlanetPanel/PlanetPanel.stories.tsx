@@ -6,7 +6,7 @@ const meta = {
 }
 
 export const PlanetsPanel = {
-  render: () => <PlanetPanel data={mockData} />,
+  render: () => <PlanetPanel data={mockData} className="m-4" />,
 }
 
 export default meta
