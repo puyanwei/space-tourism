@@ -9,12 +9,20 @@ const meta: Meta<typeof Tab> = {
 export default meta
 type Story = StoryObj<typeof Tab>
 
+function handleClick() {
+  console.warn("clicked")
+}
+
 export const Tabs: Story = {
   render: () => (
     <div className="flex gap-4">
-      <Tab>Idle</Tab>
-      <Tab active={true}>Active</Tab>
-      <Tab buttonTextClassName="!border-b-space-gray">Hover</Tab>
+      <Tab onClick={handleClick}>Idle</Tab>
+      <Tab onClick={handleClick} active={true}>
+        Active
+      </Tab>
+      <Tab onClick={handleClick} buttonTextClassName="!border-b-space-gray">
+        Hover
+      </Tab>
     </div>
   ),
 }
