@@ -1,4 +1,4 @@
-e# Space Tourism
+# Space Tourism
 
 This is a frontend mentor [challenge](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3) exercise to build a website for Space Travel.
 
@@ -19,7 +19,7 @@ This is a good opportunity to get to know the new [app directory](https://nextjs
 #### Using Next 13 App folder (beta)
 
 - Multiple font loading does not seem to work with tailwind. The custom variable names do not seem to get picked up in `tailwind.config`
-- RootLayout (`Layout.tsx` on the root of app) contains the server loading of fonts, but adding Navbar into it prevents passing in current url prop so that current link can be highlighted. This needs to be done client side, and there is no way to load via server and client on the same file.
+- RootLayout (`Layout.tsx` on the root of app) contains the server loading of fonts, but adding Navbar into it prevents passing in current url prop so that current link can be highlighted. This needs to be done client side, and there is no way to load via server and client on the same file or separating them
 
 #### Other Issues
 
