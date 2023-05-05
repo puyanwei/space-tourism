@@ -10,6 +10,7 @@ import { PageUrls } from "@/shared/types"
 import { navbar } from "@/shared/consts"
 import { PageLayout } from "@/components/3-compositions/PageLayout"
 import { ReactNode } from "react"
+import useSWR from "swr"
 
 export const metadata = {
   title: "Space Tourism",

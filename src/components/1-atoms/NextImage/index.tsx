@@ -18,9 +18,15 @@ export function NextImage({ src, fallbackSrc, alt, width, height }: NextImagePro
   function handleOnError() {
     setOnError(true)
   }
+
+  function resolveLeadingSlash(url: string): string {
+    const resolvedUrl = url[0] === "." ? url.slice(1) : url
+    return resolvedUrl
+  }
+
   return (
     <Image
-      src={onError ? fallbackSrc : src}
+      src={onError ? resolveLeadingSlash(fallbackSrc) : resolveLeadingSlash(src)}
       alt={alt}
       width={width}
       height={height}

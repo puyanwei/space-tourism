@@ -1,25 +1,14 @@
 import { Tab } from "@/components/1-atoms/Tab"
 import { Text } from "@/components/1-atoms/Text"
 import { warnAndReturnNull } from "@/shared/helpers"
-import { Component } from "@/shared/types"
+import { Component, Destinations } from "@/shared/types"
 import { Heading } from "@/components/1-atoms/Heading"
 import { PlanetStatistics } from "@/components/2-molecules/PlanetStatistics"
 import { ReactNode, useState } from "react"
 import { NextImage } from "@/components/1-atoms/NextImage"
 
-interface Destination {
-  name: string
-  images: {
-    png: string
-    webp: string
-  }
-  description: string
-  distance: string
-  travel: string
-}
-
 interface PlanetPanelProps extends Component {
-  data: Destination[]
+  data: Destinations[]
 }
 
 export function PlanetPanel({ data, className = "" }: PlanetPanelProps) {

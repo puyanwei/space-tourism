@@ -24,3 +24,4 @@ This is a good opportunity to get to know the new [app directory](https://nextjs
 #### Other Issues
 
 - Storybook is unable to load if tailwind is using a reference to an asset in the public folder. In my instance, a reference for a background image which ommited the public folder in the url confuses Storybook into trying to find this when loading its css. Using the config `staticDirs: ["../public"],` in `main.t` doesn't seem to work.
+- Want to preview code in Storybook on how the component works, but now they've added a seperate file to show this on ALL components rather then have a tab within it which I find awful as it unnecessarily clutters storybook.

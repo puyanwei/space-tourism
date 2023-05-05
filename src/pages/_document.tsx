@@ -11,7 +11,7 @@ export default function Document() {
           rel="stylesheet"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;700&display=swap"
           rel="stylesheet"
         />
       </Head>

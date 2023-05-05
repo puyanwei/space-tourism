@@ -4,21 +4,17 @@ import { Button } from "@/components/1-atoms/Button"
 import { Heading } from "@/components/1-atoms/Heading"
 import { Subheading } from "@/components/1-atoms/Subheading"
 import { Text } from "@/components/1-atoms/Text"
-import useSWR from "swr"
 
 export default function Home() {
-  const { data, error, isLoading } = useSWR("/api", (url) => fetch(url).then((res) => res.json()))
-
   const router = useRouter()
 
   function handleClick() {
     router.push("/destination")
   }
 
-  console.log({ data }) // TODO:TESTING THIS WORKS, REMOVE LATER
   return (
     <>
-      <main className="lg:pl-[165px]">
+      <main className="lg:pl-[200px] pt-[200px]">
         <Subheading theme="primary">So, you want to travel to</Subheading>
         <Heading level="h1">Space</Heading>
         <Text className="max-w-[327px] md:max-w-[450px] mx-auto">
@@ -27,7 +23,7 @@ export default function Home() {
           truly out of this world experience!
         </Text>
       </main>
-      <div className="lg:pl-[40%] lg:pt-[20%] mt-[81px]">
+      <div className="lg:pl-[20%] lg:pt-[350px] pt-[200px]">
         <Button variant="explore" onClick={handleClick}>
           Explore
         </Button>
