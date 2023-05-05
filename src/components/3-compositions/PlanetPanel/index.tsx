@@ -33,7 +33,7 @@ export function PlanetPanel({ data, children }: PlanetPanelProps) {
       <LeftPanel className="grid grid-cols-1">
         <div className="pl-60">{children}</div>
         <NextImage
-          className="justify-self-end"
+          className="justify-self-end pt-16"
           src={webp}
           fallbackSrc={png}
           alt={name}
