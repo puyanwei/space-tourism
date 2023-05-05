@@ -12,7 +12,7 @@ interface NextImageProps extends Component {
 
 type SafeNumber = number | `${number}`
 
-export function NextImage({ src, fallbackSrc, alt, width, height }: NextImageProps) {
+export function NextImage({ src, fallbackSrc, alt, width, height, className }: NextImageProps) {
   const [onError, setOnError] = useState(false)
 
   function handleOnError() {
@@ -26,6 +26,7 @@ export function NextImage({ src, fallbackSrc, alt, width, height }: NextImagePro
 
   return (
     <Image
+      className={className}
       src={onError ? resolveLeadingSlash(fallbackSrc) : resolveLeadingSlash(src)}
       alt={alt}
       width={width}

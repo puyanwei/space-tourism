@@ -17,11 +17,8 @@ export function getStaticProps() {
 export default function Destination({ data }: { data: Data }) {
   const { destinations } = data
   return (
-    <>
-      <main>
-        <SpaceSubheading number="01">Pick your destination</SpaceSubheading>
-      </main>
-      <PlanetPanel data={destinations} />
-    </>
+    <PlanetPanel data={destinations}>
+      <SpaceSubheading number="01">Pick your destination</SpaceSubheading>
+    </PlanetPanel>
   )
 }

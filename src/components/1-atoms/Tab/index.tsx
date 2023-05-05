@@ -3,23 +3,23 @@ import { ReactNode } from "react"
 
 interface TabProps extends Component {
   children: ReactNode
-  active?: boolean
+  active: boolean
   buttonTextClassName?: string
   onClick: () => void
 }
 
 export function Tab({
-  className,
+  className = "",
   buttonTextClassName = "",
   children,
   active = false,
   onClick,
 }: TabProps) {
-  const activeStyle = active ? `border-white` : `border-transparent hover:border-space-gray`
+  const activeStyle = active
+    ? `border-white text-white`
+    : `border-transparent hover:border-space-gray text-space-light-blue`
   return (
-    <button
-      className={`uppercase font-primary font-semibold tracking-[2.7px] text-white ${className}`}
-    >
+    <button className={`uppercase font-primary tracking-[2.7px] ${className}`}>
       <span
         className={`py-2 border-b-[3px] ${buttonTextClassName} ${activeStyle}`}
         onClick={onClick}
