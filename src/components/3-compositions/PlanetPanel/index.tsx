@@ -1,10 +1,10 @@
+import { ReactNode, useState } from "react"
 import { Tab } from "@/components/1-atoms/Tab"
 import { Text } from "@/components/1-atoms/Text"
 import { warnAndReturnNull } from "@/shared/helpers"
 import { Component, Destinations } from "@/shared/types"
 import { Heading } from "@/components/1-atoms/Heading"
 import { PlanetStatistics } from "@/components/2-molecules/PlanetStatistics"
-import { ReactNode, useState } from "react"
 import { NextImage } from "@/components/1-atoms/NextImage"
 
 interface PlanetPanelProps extends Component {
@@ -30,10 +30,10 @@ export function PlanetPanel({ data, children }: PlanetPanelProps) {
 
   return (
     <>
-      <LeftPanel>
-        {children}
+      <LeftPanel className="grid grid-cols-1">
+        <div className="pl-60">{children}</div>
         <NextImage
-          className="pt-20 mx-auto"
+          className="justify-self-end"
           src={webp}
           fallbackSrc={png}
           alt={name}
