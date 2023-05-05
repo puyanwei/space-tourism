@@ -17,8 +17,8 @@ export default function Home() {
 
   console.log({ data }) // TODO:TESTING THIS WORKS, REMOVE LATER
   return (
-    <div className="flex flex-col lg:grid h-screen lg:grid-cols-2 lg:grid-rows-2 bg-scroll font-primary text-center justify-items-center lg:place-items-center pt-16 lg:pb-[131px] lg:text-left md:pt-[225px] px-4">
-      <main className="lg:row-start-2 lg:pl-[165px]">
+    <>
+      <main className="lg:pl-[165px]">
         <Subheading theme="primary">So, you want to travel to</Subheading>
         <Heading level="h1">Space</Heading>
         <Text className="max-w-[327px] md:max-w-[450px] mx-auto">
@@ -27,11 +27,11 @@ export default function Home() {
           truly out of this world experience!
         </Text>
       </main>
-      <div className="lg:pl-[40%] lg:pt-[20%] lg:row-start-2 mt-[81px]">
+      <div className="lg:pl-[40%] lg:pt-[20%] mt-[81px]">
         <Button variant="explore" onClick={handleClick}>
           Explore
         </Button>
       </div>
-    </div>
+    </>
   )
 }
