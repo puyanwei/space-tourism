@@ -16,11 +16,13 @@ function handleClick() {
 export const Tabs: Story = {
   render: () => (
     <div className="flex gap-4">
-      <Tab onClick={handleClick}>Idle</Tab>
+      <Tab active={false} onClick={handleClick}>
+        Idle
+      </Tab>
       <Tab onClick={handleClick} active={true}>
         Active
       </Tab>
-      <Tab onClick={handleClick} buttonTextClassName="!border-b-space-gray">
+      <Tab active={false} onClick={handleClick} buttonTextClassName="!border-b-space-gray">
         Hover
       </Tab>
     </div>
