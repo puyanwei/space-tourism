@@ -28,7 +28,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <div className="relative">
       <BackgroundImage url={backgroundImageUrl} />
-      <HeaderSection>
+      <HeaderSection className="sticky">
         <Line />
         <Logo className="fixed left-6 top-6 md:left-14 md:top-14 scale-[.835] md:scale-100" />
         <NavBar data={navbar} currentPath={currentPath as PageUrls} />
@@ -46,8 +46,8 @@ function Line() {
   )
 }
 
-function HeaderSection({ children }: { children: ReactNode }) {
-  return <>{children}</>
+function HeaderSection({ children, className = "" }: { children: ReactNode; className?: string }) {
+  return <nav className={className}>{children}</nav>
 }
 
 export default MyApp

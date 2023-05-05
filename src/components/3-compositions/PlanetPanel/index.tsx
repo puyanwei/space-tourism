@@ -6,6 +6,8 @@ import { Component, Destinations } from "@/shared/types"
 import { Heading } from "@/components/1-atoms/Heading"
 import { PlanetStatistics } from "@/components/2-molecules/PlanetStatistics"
 import { NextImage } from "@/components/1-atoms/NextImage"
+import { useWindowSize } from "src/hooks/useWindowSize"
+import { desktopSize, mobileSize, tabletSize } from "@/shared/consts"
 
 interface PlanetPanelProps extends Component {
   data: Destinations[]
@@ -14,10 +16,19 @@ interface PlanetPanelProps extends Component {
 
 export function PlanetPanel({ data, children }: PlanetPanelProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const { width } = useWindowSize()
+  if (!width) return warnAndReturnNull("screen width is empty")
   if (!data.length) return warnAndReturnNull("data is empty")
 
   function handleOnClick(index: number) {
     setCurrentIndex(index)
+  }
+
+  function resolveImageSize(screenWidth: number) {
+    if (screenWidth < tabletSize) return 170
+    if (screenWidth > tabletSize && screenWidth < desktopSize) return 300
+    if (screenWidth > desktopSize) return 445
+    return 0
   }
 
   const {
@@ -28,20 +39,21 @@ export function PlanetPanel({ data, children }: PlanetPanelProps) {
     images: { png, webp },
   } = data[currentIndex]
 
+  const imageSize = resolveImageSize(width)
   return (
     <>
       <LeftPanel className="grid grid-cols-1">
-        <div className="pl-60">{children}</div>
+        <div className="justify-self-center lg:justify-self-start lg:pl-60">{children}</div>
         <NextImage
-          className="justify-self-end pt-16"
+          className="justify-self-end lg:pt-16 z-10"
           src={webp}
           fallbackSrc={png}
           alt={name}
-          width="445"
-          height="445"
+          width={`${imageSize}`}
+          height={`${imageSize}`}
         />
       </LeftPanel>
-      <RightPanel className="max-w-[445px] pt-24">
+      <RightPanel className="max-w-[445px] lg:pt-24">
         <TabGroup className="space-x-12">
           {data.map(({ name }, index) => (
             <Tab

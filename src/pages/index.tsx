@@ -14,7 +14,7 @@ export default function Home() {
 
   return (
     <>
-      <main className="lg:pl-[200px] pt-[200px]">
+      <main className="lg:pl-[200px]">
         <Subheading theme="primary">So, you want to travel to</Subheading>
         <Heading level="h1">Space</Heading>
         <Text className="max-w-[327px] md:max-w-[450px] mx-auto">
