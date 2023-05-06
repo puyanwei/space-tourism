@@ -23,14 +23,14 @@ export function NavBarMobile({ data, currentPath, className = "" }: NavBarProps)
   const pointerEventStatus = isMenuOpen ? `pointer-events-auto` : `pointer-events-none`
 
   return (
-    <div className="sticky top-0 left-0">
+    <div>
       <span className="flex justify-end">
         {isMenuOpen ? (
-          <Button className="z-10 pl-0 m-8" onClick={handleXClick} variant="unset">
+          <Button className="fixed z-10 pl-0 m-8" onClick={handleXClick} variant="unset">
             <CloseIcon />
           </Button>
         ) : (
-          <Button className="z-10 pl-0 m-8" onClick={handleHamburgerClick} variant="unset">
+          <Button className="fixed z-10 pl-0 m-8" onClick={handleHamburgerClick} variant="unset">
             <HamburgerIcon />
           </Button>
         )}
