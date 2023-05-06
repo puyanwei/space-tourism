@@ -8,7 +8,7 @@ interface BackgroundImageProps extends Component {
 export function BackgroundImage({ url }: BackgroundImageProps) {
   return (
     <Image
-      className="fixed pointer-events-none -z-10"
+      className="!fixed pointer-events-none -z-10 inset-0"
       src={url}
       alt="background image of space"
       fill
