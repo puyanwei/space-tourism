@@ -13,7 +13,7 @@ interface ButtonProps extends Component {
   variant?: keyof typeof buttonMap
 }
 
-export function Button({ className, children, onClick, variant = "default" }: ButtonProps) {
+export function Button({ className = "", children, onClick, variant = "default" }: ButtonProps) {
   const style = "uppercase transition-all duration-300 ease-in-out"
   return (
     <button className={`${style} ${buttonMap[variant]} ${className}`} onClick={onClick}>
