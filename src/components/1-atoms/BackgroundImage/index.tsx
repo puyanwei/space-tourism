@@ -10,7 +10,7 @@ export function BackgroundImage({ url }: BackgroundImageProps) {
     <Image
       className="fixed pointer-events-none -z-10"
       src={url}
-      alt="background image of earth from space"
+      alt="background image of space"
       fill
     />
   )

@@ -8,13 +8,16 @@ interface PlanetStatisticsProps extends Component {
 
 export function PlanetStatistics({ distance, travelTime }: PlanetStatisticsProps) {
   return (
-    <div className="uppercase border-t-[1px] border-space-dark-gray grid grid-cols-2  py-4">
-      <Text className="lg:text-sm">Avg. Distance</Text>
-      <Text className="lg:text-sm">Est. Travel Time</Text>
-      <Text className="lg:text-[28px]" theme="serif">
+    <div className="flex flex-col md:grid md:grid-cols-2 uppercase border-t-[1px] border-space-dark-gray py-4 md:gap-2">
+      <Text className="order-1 md:order-none lg:text-sm py-2 md:py-0 ">Avg. Distance</Text>
+      <Text className="order-3 md:order-none lg:text-sm py-2 md:py-0 ">Est. Travel Time</Text>
+      <Text
+        className="order-2 md:order-none text-[32px] md:text-[28px] pb-4 md:py-0 text-white"
+        theme="serif"
+      >
         {distance}
       </Text>
-      <Text className="lg:text-[28px]" theme="serif">
+      <Text className="order-4 md:order-none text-[32px] md:text-[28px] text-white" theme="serif">
         {travelTime}
       </Text>
     </div>

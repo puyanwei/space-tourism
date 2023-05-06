@@ -20,8 +20,10 @@ export function NavBarMobile({ data, currentPath, className = "" }: NavBarProps)
     ? `translate-x-0 from opacity-0 to opacity-100`
     : `translate-x-full from opacity-100 to opacity-0`
 
+  const pointerEventStatus = isMenuOpen ? `pointer-events-auto` : `pointer-events-none`
+
   return (
-    <>
+    <div className="sticky top-0 left-0">
       <span className="flex justify-end">
         {isMenuOpen ? (
           <Button className="z-10 pl-0 m-8" onClick={handleXClick} variant="unset">
@@ -33,7 +35,7 @@ export function NavBarMobile({ data, currentPath, className = "" }: NavBarProps)
           </Button>
         )}
       </span>
-      <div className="fixed inset-0 overflow-hidden">
+      <div className={`fixed inset-0 overflow-hidden pointer-events-none ${pointerEventStatus}`}>
         <div
           className={`pt-[118px] font-primary text-base letter-spacing-[2.7px] uppercase text-white backdrop-blur-2xl bg-space-gray/10 h-screen md:h-[90px] absolute right-0 top-0 w-[60%] z-0 transform ease-in-out duration-300 ${slideAnimation} ${className}`}
         >
@@ -60,6 +62,6 @@ export function NavBarMobile({ data, currentPath, className = "" }: NavBarProps)
           </ul>
         </div>
       </div>
-    </>
+    </div>
   )
 }

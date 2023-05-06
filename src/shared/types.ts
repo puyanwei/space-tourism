@@ -45,3 +45,7 @@ export interface Data {
   crew: Crew[]
   technology: Technology[]
 }
+
+export interface DataProps {
+  data: Data
+}

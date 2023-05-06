@@ -14,7 +14,7 @@ interface PlanetPanelProps extends Component {
   children: ReactNode
 }
 
-export function PlanetPanel({ data, children }: PlanetPanelProps) {
+export function PlanetPanel({ data, children: heading }: PlanetPanelProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const { width } = useWindowSize()
   if (!width) return warnAndReturnNull("screen width is empty")
@@ -42,10 +42,12 @@ export function PlanetPanel({ data, children }: PlanetPanelProps) {
   const imageSize = resolveImageSize(width)
   return (
     <>
-      <LeftPanel className="grid grid-cols-1">
-        <div className="justify-self-center lg:justify-self-start lg:pl-60">{children}</div>
+      <LeftPanel className="grid grid-cols-1 gap-4">
+        <PageHeading className="justify-self-center md:justify-self-start lg:pl-12 md:pl-10">
+          {heading}
+        </PageHeading>
         <NextImage
-          className="justify-self-end lg:pt-16 z-10"
+          className="justify-self-center lg:justify-self-end lg:pt-16 py-8"
           src={webp}
           fallbackSrc={png}
           alt={name}
@@ -53,8 +55,8 @@ export function PlanetPanel({ data, children }: PlanetPanelProps) {
           height={`${imageSize}`}
         />
       </LeftPanel>
-      <RightPanel className="max-w-[445px] lg:pt-24">
-        <TabGroup className="space-x-12">
+      <RightPanel className="max-w-[400px] md:max-w-[600px] mx-auto lg:max-w-[445px] lg:pt-24 px-6 md:px-0 md:pb-8 lg:pb-0">
+        <TabGroup className="space-x-8 lg:space-x-12 pb-8">
           {data.map(({ name }, index) => (
             <Tab
               active={data[currentIndex].name === name}
@@ -65,7 +67,9 @@ export function PlanetPanel({ data, children }: PlanetPanelProps) {
             </Tab>
           ))}
         </TabGroup>
-        <Heading level="h2">{name}</Heading>
+        <Heading className="" level="h3">
+          {name}
+        </Heading>
         <Text className="mb-12">{description}</Text>
         <PlanetStatistics distance={distance} travelTime={travel} />
       </RightPanel>
@@ -80,5 +84,8 @@ function RightPanel({ children, className = "" }: { children: ReactNode; classNa
   return <div className={className}>{children}</div>
 }
 function LeftPanel({ children, className = "" }: { children: ReactNode; className?: string }) {
+  return <div className={className}>{children}</div>
+}
+function PageHeading({ children, className = "" }: { children: ReactNode; className?: string }) {
   return <div className={className}>{children}</div>
 }
