@@ -42,12 +42,12 @@ export function PlanetPanel({ data, children: heading }: PlanetPanelProps) {
   const imageSize = resolveImageSize(width)
   return (
     <>
-      <LeftPanel className="grid grid-cols-1 gap-4">
-        <PageHeading className="justify-self-center md:justify-self-start lg:pl-12 md:pl-10">
+      <LeftPanel className="grid grid-cols-1 lg:justify-self-center lg:pl-[5%]">
+        <PageHeading className="justify-self-center md:justify-self-start md:pl-[6%]">
           {heading}
         </PageHeading>
         <NextImage
-          className="justify-self-center lg:justify-self-end lg:pt-16 py-8"
+          className="justify-self-center lg:pt-16 py-8"
           src={webp}
           fallbackSrc={png}
           alt={name}
@@ -55,8 +55,8 @@ export function PlanetPanel({ data, children: heading }: PlanetPanelProps) {
           height={`${imageSize}`}
         />
       </LeftPanel>
-      <RightPanel className="max-w-[400px] md:max-w-[600px] mx-auto lg:max-w-[445px] lg:pt-24 px-6 md:px-0 md:pb-8 lg:pb-0">
-        <TabGroup className="space-x-8 lg:space-x-12 pb-8">
+      <RightPanel className="max-w-[400px] md:max-w-[600px] mx-auto lg:mx-0 lg:max-w-[445px] lg:pt-24 px-6 md:px-0 md:pb-8 lg:pb-0">
+        <TabGroup className="space-x-8 lg:space-x-12 pb-8 lg:pb-4">
           {data.map(({ name }, index) => (
             <Tab
               active={data[currentIndex].name === name}
@@ -67,7 +67,7 @@ export function PlanetPanel({ data, children: heading }: PlanetPanelProps) {
             </Tab>
           ))}
         </TabGroup>
-        <Heading className="" level="h3">
+        <Heading className="lg:text-[100px]" level="h3">
           {name}
         </Heading>
         <Text className="mb-12">{description}</Text>

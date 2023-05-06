@@ -14,7 +14,7 @@ export default function Home() {
 
   return (
     <>
-      <main className="lg:pl-[200px] lg:pt-[175px] h-screen">
+      <main className="lg:pl-[200px] lg:pt-[250px] h-screen">
         <Subheading theme="primary">So, you want to travel to</Subheading>
         <Heading level="h1">Space</Heading>
         <Text className="max-w-[327px] md:max-w-[450px] mx-auto lg:mx-0">
@@ -23,7 +23,7 @@ export default function Home() {
           truly out of this world experience!
         </Text>
       </main>
-      <div className="lg:pl-[20%] lg:pt-[275px] flex flex-col">
+      <div className="lg:pl-[30%] lg:pt-[350px] flex flex-col">
         <div className="flex flex-grow lg:hidden" />
         <div className="pb-[100px]">
           <Button variant="explore" onClick={handleClick}>

@@ -14,10 +14,11 @@ export function PlanetStatistics({ distance, travelTime }: PlanetStatisticsProps
       <Text
         className="order-2 md:order-none text-[32px] md:text-[28px] pb-4 md:py-0 text-white"
         theme="serif"
+        size="text-[28px]"
       >
         {distance}
       </Text>
-      <Text className="order-4 md:order-none text-[32px] md:text-[28px] text-white" theme="serif">
+      <Text className="order-4 md:order-none text-white" theme="serif" size="text-[28px]">
         {travelTime}
       </Text>
     </div>
