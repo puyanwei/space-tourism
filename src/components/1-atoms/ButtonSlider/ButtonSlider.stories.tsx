@@ -10,24 +10,30 @@ const meta: Meta<typeof ButtonSlider> = {
 export default meta
 type Story = StoryObj<typeof ButtonSlider>
 
+function handleOnClick() {
+  console.warn("Button slider clicked")
+}
+
 export const ButtonSliders: Story = {
   render: () => (
     <div>
       <StorybookHeading className="text-black">Active/Hover/Idle</StorybookHeading>
       <div className="flex space-x-4 my-4">
-        <ButtonSlider active={true} />
-        <ButtonSlider className="!bg-space-gray" />
-        <ButtonSlider />
+        <ButtonSlider onClick={handleOnClick} active={true} />
+        <ButtonSlider onClick={handleOnClick} className="!bg-space-gray" />
+        <ButtonSlider onClick={handleOnClick} />
       </div>
       <StorybookHeading className="text-black">Vertical Version</StorybookHeading>
       <div className="flex flex-col space-y-4 my-4">
-        <ButtonSlider active={true} version="vertical">
+        <ButtonSlider onClick={handleOnClick} active={true} version="vertical">
           1
         </ButtonSlider>
-        <ButtonSlider className="!border-2" version="vertical">
+        <ButtonSlider onClick={handleOnClick} className="!border-2" version="vertical">
           2
         </ButtonSlider>
-        <ButtonSlider version="vertical">3</ButtonSlider>
+        <ButtonSlider onClick={handleOnClick} version="vertical">
+          3
+        </ButtonSlider>
       </div>
     </div>
   ),

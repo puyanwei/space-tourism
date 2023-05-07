@@ -12,3 +12,10 @@ export function warnAndReturnNull(warning: string) {
   console.warn(warning)
   return null
 }
+
+export function resolveImageSize(screenWidth: number) {
+  if (screenWidth < tabletSize) return 170
+  if (screenWidth > tabletSize && screenWidth < desktopSize) return 300
+  if (screenWidth > desktopSize) return 445
+  return 0
+}

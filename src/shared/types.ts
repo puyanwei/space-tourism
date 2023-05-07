@@ -1,9 +1,14 @@
+import { ReactNode } from "react"
 import { backgroundImageMap } from "./consts"
 
 export interface Component {
   className?: string
   style?: string
   testId?: string
+}
+
+export interface WithChildren extends Component {
+  children: ReactNode
 }
 
 export type Page = keyof typeof backgroundImageMap

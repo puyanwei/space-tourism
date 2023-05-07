@@ -16,6 +16,7 @@ interface ButtonSliderProps extends Component {
   active?: boolean
   version?: "horizontal" | "vertical"
   children?: string
+  onClick: () => void
 }
 
 export function ButtonSlider({
@@ -23,8 +24,13 @@ export function ButtonSlider({
   active = false,
   version = "horizontal",
   children = "",
+  onClick,
 }: ButtonSliderProps) {
   const baseStyle = styleMap[version].default
   const activeStyle = active ? styleMap[version].active : styleMap[version].idle
-  return <button className={`${baseStyle} ${activeStyle} ${className}`}>{children}</button>
+  return (
+    <button className={`${baseStyle} ${activeStyle} ${className}`} onClick={onClick}>
+      {children}
+    </button>
+  )
 }

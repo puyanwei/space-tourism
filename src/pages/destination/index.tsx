@@ -21,9 +21,5 @@ export const getStaticProps: GetStaticProps<DestinationsProps> = async () => {
 
 export default function Destination({ data }: DestinationsProps) {
   const { destinations } = data
-  return (
-    <PlanetPanel data={destinations}>
-      <SpaceSubheading number="01">Pick your destination</SpaceSubheading>
-    </PlanetPanel>
-  )
+  return <PlanetPanel data={destinations} />
 }

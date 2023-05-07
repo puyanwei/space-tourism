@@ -1,15 +1,15 @@
-import { PlanetPanel } from "."
+import { CrewPanel } from "."
 import { mockData } from "./const"
 import { PageLayout } from "../PageLayout"
 
 const meta = {
-  title: "Compositions/Planets Panel",
+  title: "Compositions/The Crew Panel",
 }
 
-export const PlanetsPanel = {
+export const TheCrewPanel = {
   render: () => (
     <PageLayout className="pt-0 m:pt-0 lg:pt-0">
-      <PlanetPanel data={mockData} />
+      <CrewPanel data={mockData} />
     </PageLayout>
   ),
 }
