@@ -32,17 +32,35 @@ export function CrewPanel({ data }: CrewPanalProps) {
     bio,
   } = data[currentIndex]
 
-  const imageSize = resolveImageSize(width)
+  const imageWidth = resolveImageSize(width, 327, 532, 681)
+  const imageHeight = resolveImageSize(width, 327, 443, 568)
   return (
     <>
-      <LeftPanel className="flex flex-col">
-        <PageHeading>
+      <LeftPanel className="flex flex-col lg:pl-48 h-screen lg:h-full">
+        <PageHeading className="mx-auto lg:mx-0 pb-10 order-1 lg:order-none">
           <SpaceSubheading number="02">Meet your crew</SpaceSubheading>
         </PageHeading>
-        <Text>{role}</Text>
-        <Heading level="h4">{name}</Heading>
-        <Text>{bio}</Text>
-        <CrewSliders>
+        <div className="relative w-full h-[223px] order-2 lg:order-none border-b-space-dark-gray border-b-2 lg:border-b-0 -z-10 pointer-events-none">
+          <NextImage
+            className="lg:hidden object-contain"
+            src={webp}
+            fallbackSrc={png}
+            alt={name}
+            fill
+          />
+        </div>
+        <Text
+          className="uppercase text-space-gray lg:pt-[150px] order-4 lg:order-none"
+          theme="serif"
+          sizeOverride="text-[16px] lg:text-[32px]"
+        >
+          {role}
+        </Text>
+        <Text className="order-5 lg:order-none text-[24px] uppercase pb-4" theme="serif">
+          {name}
+        </Text>
+        <Text className="max-w-md order-6 lg:order-none pb-16">{bio}</Text>
+        <CrewSlider className="py-6 space-x-4 lg:pt-0 lg:pb-8 order-3 lg:order-none">
           {data.map(({ name }, index) => (
             <ButtonSlider
               key={`${name} ${index}}`}
@@ -50,17 +68,10 @@ export function CrewPanel({ data }: CrewPanalProps) {
               onClick={() => handleOnClick(index)}
             />
           ))}
-        </CrewSliders>
+        </CrewSlider>
       </LeftPanel>
-      <RightPanel className="">
-        <NextImage
-          className="justify-self-center"
-          src={webp}
-          fallbackSrc={png}
-          alt={name}
-          width={`${imageSize}`}
-          height={`${imageSize}`}
-        />
+      <RightPanel className="hidden lg:show lg:flex lg:flex-col lg:relative">
+        <NextImage className="object-contain pr-48" src={webp} fallbackSrc={png} alt={name} fill />
       </RightPanel>
     </>
   )
@@ -75,6 +86,6 @@ function LeftPanel({ children, className = "" }: WithChildren) {
 function PageHeading({ children, className = "" }: WithChildren) {
   return <div className={className}>{children}</div>
 }
-function CrewSliders({ children, className = "" }: WithChildren) {
+function CrewSlider({ children, className = "" }: WithChildren) {
   return <div className={className}>{children}</div>
 }

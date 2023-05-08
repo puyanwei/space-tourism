@@ -2,7 +2,7 @@ import { Component } from "@/shared/types"
 
 const styleMap = {
   horizontal: {
-    default: `h-[15px] w-[15px] rounded-full hover:bg-space-gray`,
+    default: `h-[10px] w-[10px] lg:h-[15px] lg:w-[15px] rounded-full hover:bg-space-gray`,
     idle: `bg-space-dark-gray`,
     active: `bg-white`,
   },

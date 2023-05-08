@@ -13,9 +13,14 @@ export function warnAndReturnNull(warning: string) {
   return null
 }
 
-export function resolveImageSize(screenWidth: number) {
-  if (screenWidth < tabletSize) return 170
-  if (screenWidth > tabletSize && screenWidth < desktopSize) return 300
-  if (screenWidth > desktopSize) return 445
+export function resolveImageSize(
+  screenWidth: number,
+  small: number,
+  medium: number,
+  large: number
+) {
+  if (screenWidth < tabletSize) return small
+  if (screenWidth > tabletSize && screenWidth < desktopSize) return medium
+  if (screenWidth > desktopSize) return large
   return 0
 }

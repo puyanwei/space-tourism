@@ -1,5 +1,4 @@
 import fs from "fs"
-import { SpaceSubheading } from "@/components/2-molecules/SpaceSubheading"
 import { PlanetPanel } from "@/components/3-compositions/PlanetPanel"
 import { Data } from "@/shared/types"
 import { GetStaticProps } from "next"

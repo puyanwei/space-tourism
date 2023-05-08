@@ -6,13 +6,24 @@ interface NextImageProps extends Component {
   src: string
   fallbackSrc: string
   alt: string
-  width: SafeNumber
-  height: SafeNumber
+  width?: SafeNumber
+  height?: SafeNumber
+  sizes?: string
+  fill?: boolean
 }
 
 type SafeNumber = number | `${number}`
 
-export function NextImage({ src, fallbackSrc, alt, width, height, className }: NextImageProps) {
+export function NextImage({
+  className,
+  src,
+  fallbackSrc,
+  alt,
+  width,
+  height,
+  sizes,
+  fill = false,
+}: NextImageProps) {
   const [onError, setOnError] = useState(false)
 
   function handleOnError() {
@@ -28,10 +39,12 @@ export function NextImage({ src, fallbackSrc, alt, width, height, className }: N
     <Image
       className={className}
       src={onError ? resolveLeadingSlash(fallbackSrc) : resolveLeadingSlash(src)}
-      alt={alt}
       width={width}
       height={height}
+      alt={alt}
       onError={handleOnError}
+      sizes={sizes}
+      fill={fill}
     />
   )
 }

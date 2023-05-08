@@ -31,7 +31,7 @@ export function PlanetPanel({ data }: PlanetPanelProps) {
     images: { png, webp },
   } = data[currentIndex]
 
-  const imageSize = resolveImageSize(width)
+  const imageSize = resolveImageSize(width, 170, 300, 445)
   return (
     <>
       <LeftPanel className="grid grid-cols-1 lg:justify-self-center lg:pl-[5%]">
