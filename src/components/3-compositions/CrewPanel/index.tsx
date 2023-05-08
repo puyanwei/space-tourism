@@ -32,35 +32,34 @@ export function CrewPanel({ data }: CrewPanalProps) {
     bio,
   } = data[currentIndex]
 
-  const imageWidth = resolveImageSize(width, 327, 532, 681)
-  const imageHeight = resolveImageSize(width, 327, 443, 568)
+  const imageWidth = resolveImageSize(width, 327, 456, 681)
+  const imageHeight = resolveImageSize(width, 327, 572, 568)
   return (
     <>
-      <LeftPanel className="flex flex-col lg:pl-48 h-screen lg:h-full">
-        <PageHeading className="mx-auto lg:mx-0 pb-10 order-1 lg:order-none">
+      <LeftPanel className="flex flex-col md:mx-8 lg:pl-[15%]">
+        <PageHeading className="mx-auto md:mx-0 lg:mx-0 pb-10 md:pb-6 order-1 md:order-none">
           <SpaceSubheading number="02">Meet your crew</SpaceSubheading>
         </PageHeading>
-        <div className="relative w-full h-[223px] order-2 lg:order-none border-b-space-dark-gray border-b-2 lg:border-b-0 -z-10 pointer-events-none">
-          <NextImage
-            className="lg:hidden object-contain"
-            src={webp}
-            fallbackSrc={png}
-            alt={name}
-            fill
-          />
+        <div className="md:hidden relative w-full h-[223px] order-2 md:order-none border-b-space-dark-gray border-b-2 md:border-b-0 -z-10 pointer-events-none">
+          <NextImage className="object-contain" src={webp} fallbackSrc={png} alt={name} fill />
         </div>
         <Text
-          className="uppercase text-space-gray lg:pt-[150px] order-4 lg:order-none"
+          className="uppercase text-space-gray lg:pt-[150px] order-4 md:order-none pb-6"
           theme="serif"
-          sizeOverride="text-[16px] lg:text-[32px]"
+          sizeOverride="text-[16px] md:text-[24px] lg:text-[32px]"
         >
           {role}
         </Text>
-        <Text className="order-5 lg:order-none text-[24px] uppercase pb-4" theme="serif">
+        <Text
+          className="order-5 md:order-none uppercase pb-8 lg:leading-[50px]"
+          theme="serif"
+          sizeOverride="text-[24px] md:text-[40px] lg:text-[56px]"
+        >
           {name}
         </Text>
-        <Text className="max-w-md order-6 lg:order-none pb-16">{bio}</Text>
-        <CrewSlider className="py-6 space-x-4 lg:pt-0 lg:pb-8 order-3 lg:order-none">
+        <Text className="max-w-md order-6 md:order-none pb-16 md:pb-8 mx-auto lg:mx-0">{bio}</Text>
+        <div className="hidden md:flex md:flex-grow md:show" />
+        <CrewSlider className="py-6 space-x-4 md:pt-0 md:pb-24 order-3 md:order-none">
           {data.map(({ name }, index) => (
             <ButtonSlider
               key={`${name} ${index}}`}
@@ -70,8 +69,15 @@ export function CrewPanel({ data }: CrewPanalProps) {
           ))}
         </CrewSlider>
       </LeftPanel>
-      <RightPanel className="hidden lg:show lg:flex lg:flex-col lg:relative">
-        <NextImage className="object-contain pr-48" src={webp} fallbackSrc={png} alt={name} fill />
+      <RightPanel className="hidden md:show md:flex md:flex-col md:relative md:mx-auto">
+        <NextImage
+          className="object-contain lg:pr-48"
+          src={webp}
+          fallbackSrc={png}
+          alt={name}
+          width={imageWidth}
+          height={imageHeight}
+        />
       </RightPanel>
     </>
   )
