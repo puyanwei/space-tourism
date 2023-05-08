@@ -1,4 +1,5 @@
 import { Component } from "@/shared/types"
+import { ReactNode } from "react"
 
 const styleMap = {
   horizontal: {
@@ -7,7 +8,7 @@ const styleMap = {
     active: `bg-white`,
   },
   vertical: {
-    default: `h-20 w-20 rounded-full bg-black border-[1px] border-white hover:border-2  hover:bg-black hover:text-white font-bellefair border-transparent text-2xl`,
+    default: `h-20 w-20 rounded-full bg-black border-[1px] border-white hover:border-2  hover:bg-black hover:text-white font-bellefair border-transparent text-[32px]`,
     idle: `text-white`,
     active: `bg-white text-black`,
   },
@@ -15,12 +16,12 @@ const styleMap = {
 interface ButtonSliderProps extends Component {
   active?: boolean
   version?: "horizontal" | "vertical"
-  children?: string
+  children?: ReactNode
   onClick: () => void
 }
 
 export function ButtonSlider({
-  className,
+  className = "",
   active = false,
   version = "horizontal",
   children = "",
