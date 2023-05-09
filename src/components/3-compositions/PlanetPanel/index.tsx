@@ -34,8 +34,10 @@ export function PlanetPanel({ data }: PlanetPanelProps) {
   const imageSize = resolveImageSize(width, 170, 300, 445)
   return (
     <>
-      <LeftPanel className="col-span-full mx-auto">
-        <SpaceSubheading number="01">Pick your destination</SpaceSubheading>
+      <LeftPanel className="col-span-full">
+        <SpaceSubheading className="justify-center" number="01">
+          Pick your destination
+        </SpaceSubheading>
         <NextImage
           className="mx-auto"
           src={webp}

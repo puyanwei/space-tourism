@@ -35,51 +35,46 @@ export function CrewPanel({ data }: CrewPanalProps) {
   const imageWidth = resolveImageSize(width, 327, 456, 681)
   const imageHeight = resolveImageSize(width, 327, 572, 568)
   return (
-    <>
-      <LeftPanel className="flex flex-col md:mx-8 lg:pl-[15%]">
-        <PageHeading className="mx-auto md:mx-0 lg:mx-0 pb-10 md:pb-6 order-1 md:order-none">
-          <SpaceSubheading number="02">Meet your crew</SpaceSubheading>
-        </PageHeading>
-        <div className="md:hidden relative w-full h-[223px] order-2 md:order-none border-b-space-dark-gray border-b-2 md:border-b-0 -z-10 pointer-events-none">
-          <NextImage className="object-contain" src={webp} fallbackSrc={png} alt={name} fill />
-        </div>
-        <Text
-          className="uppercase text-space-gray lg:pt-[150px] order-4 md:order-none pb-6"
-          theme="serif"
-          sizeOverride="text-[16px] md:text-[24px] lg:text-[32px]"
-        >
-          {role}
-        </Text>
-        <Text
-          className="order-5 md:order-none uppercase pb-8 lg:leading-[50px]"
-          theme="serif"
-          sizeOverride="text-[24px] md:text-[40px] lg:text-[56px]"
-        >
-          {name}
-        </Text>
-        <Text className="max-w-md order-6 md:order-none pb-16 md:pb-8 mx-auto lg:mx-0">{bio}</Text>
-        <div className="hidden md:flex md:flex-grow md:show" />
-        <CrewSlider className="py-6 space-x-4 md:pt-0 md:pb-24 order-3 md:order-none">
-          {data.map(({ name }, index) => (
-            <ButtonSlider
-              key={`${name} ${index}}`}
-              active={data[currentIndex].name === name}
-              onClick={() => handleOnClick(index)}
-            />
-          ))}
-        </CrewSlider>
-      </LeftPanel>
-      <RightPanel className="hidden md:show md:flex md:flex-col md:relative md:mx-auto">
+    <div className="flex flex-col col-span-full">
+      <SpaceSubheading className="order-1 md:order-none justify-center" number="02">
+        Meet your crew
+      </SpaceSubheading>
+      <Text
+        className="uppercase order-4 md:order-none"
+        theme="serif"
+        color="text-space-gray"
+        sizeOverride="text-[16px] md:text-[24px] lg:text-[32px]"
+      >
+        {role}
+      </Text>
+      <Text
+        className="order-5 md:order-none uppercase lg:leading-[50px]"
+        theme="serif"
+        sizeOverride="text-[24px] md:text-[40px] lg:text-[56px]"
+      >
+        {name}
+      </Text>
+      <Text className="max-w-md order-6 md:order-none pt-4">{bio}</Text>
+      <div className="hidden md:flex md:flex-grow md:show" />
+      <CrewSlider className="py-4 space-x-4 md:pt-0 md:pb-24 order-3 md:order-none">
+        {data.map(({ name }, index) => (
+          <ButtonSlider
+            key={`${name} ${index}}`}
+            active={data[currentIndex].name === name}
+            onClick={() => handleOnClick(index)}
+          />
+        ))}
+      </CrewSlider>
+      <div className="h-[223px] w-[327px] relative order-2 md:order-none border-b-2 border-b-space-dark-gray">
         <NextImage
-          className="object-contain lg:pr-48 fixed bottom-0"
+          className="object-contain md:fixed md:bottom-0"
           src={webp}
           fallbackSrc={png}
-          alt={name}
-          width={imageWidth}
-          height={imageHeight}
+          alt={`${name}, ${role}`}
+          fill
         />
-      </RightPanel>
-    </>
+      </div>
+    </div>
   )
 }
 
@@ -87,9 +82,6 @@ function RightPanel({ children, className = "" }: WithChildren) {
   return <div className={className}>{children}</div>
 }
 function LeftPanel({ children, className = "" }: WithChildren) {
-  return <div className={className}>{children}</div>
-}
-function PageHeading({ children, className = "" }: WithChildren) {
   return <div className={className}>{children}</div>
 }
 function CrewSlider({ children, className = "" }: WithChildren) {
