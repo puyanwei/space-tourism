@@ -8,7 +8,7 @@ const styleMap = {
     active: `bg-white`,
   },
   vertical: {
-    default: `h-20 w-20 rounded-full bg-black border-[1px] border-white hover:border-2  hover:bg-black hover:text-white font-bellefair border-transparent text-[32px]`,
+    default: `h-20 w-20 rounded-full bg-black border-[1px] border-white hover:border-2 hover:bg-black hover:text-white font-bellefair border-transparent text-[32px]`,
     idle: `text-white`,
     active: `bg-white text-black`,
   },

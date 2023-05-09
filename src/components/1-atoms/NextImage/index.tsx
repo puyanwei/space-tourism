@@ -45,6 +45,7 @@ export function NextImage({
       onError={handleOnError}
       sizes={sizes}
       fill={fill}
+      quality="100"
     />
   )
 }

@@ -14,18 +14,18 @@ export default function Home() {
 
   return (
     <>
-      <main className="lg:pl-[200px] lg:pt-[250px] h-screen lg:h-full">
+      <main className="col-span-full">
         <Subheading theme="primary">So, you want to travel to</Subheading>
         <Heading level="h1">Space</Heading>
-        <Text className="max-w-[327px] md:max-w-[450px] mx-auto lg:mx-0">
+        <Text className="">
           Let’s face it; if you want to go to space, you might as well genuinely go to outer space
           and not hover kind of on the edge of it. Well sit back, and relax because we’ll give you a
           truly out of this world experience!
         </Text>
       </main>
-      <div className="lg:pl-[30%] lg:pt-[350px] flex flex-col">
+      <div className="col-span-full flex flex-col">
         <div className="flex flex-grow lg:hidden" />
-        <div className="pb-[100px]">
+        <div className="pb-8">
           <Button variant="explore" onClick={handleClick}>
             Explore
           </Button>

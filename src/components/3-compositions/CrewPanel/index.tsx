@@ -71,7 +71,7 @@ export function CrewPanel({ data }: CrewPanalProps) {
       </LeftPanel>
       <RightPanel className="hidden md:show md:flex md:flex-col md:relative md:mx-auto">
         <NextImage
-          className="object-contain lg:pr-48"
+          className="object-contain lg:pr-48 fixed bottom-0"
           src={webp}
           fallbackSrc={png}
           alt={name}

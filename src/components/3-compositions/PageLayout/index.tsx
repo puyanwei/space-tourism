@@ -8,7 +8,7 @@ interface PageLayoutProps extends Component {
 export function PageLayout({ children, className = "" }: PageLayoutProps) {
   return (
     <div
-      className={`flex flex-col lg:grid h-screen lg:grid-cols-2 bg-scroll font-primary text-center pt-24 lg:pt-50 lg:text-left md:pt-[180px] lg:pt-[212px] px-6 ${className}`}
+      className={`grid grid-cols-12 h-screen bg-scroll font-primary text-center max-w-[1110px] pt-24 lg:text-left px-6 md:pt-[180px] lg:pt-[212px] ${className}`}
     >
       {children}
     </div>
