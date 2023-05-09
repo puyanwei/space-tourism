@@ -34,12 +34,10 @@ export function PlanetPanel({ data }: PlanetPanelProps) {
   const imageSize = resolveImageSize(width, 170, 300, 445)
   return (
     <>
-      <LeftPanel className="grid grid-cols-1 lg:justify-self-center lg:pl-[5%]">
-        <PageHeading className="justify-self-center md:justify-self-start md:pl-[6%]">
-          <SpaceSubheading number="01">Pick your destination</SpaceSubheading>
-        </PageHeading>
+      <LeftPanel className="col-span-full mx-auto">
+        <SpaceSubheading number="01">Pick your destination</SpaceSubheading>
         <NextImage
-          className="justify-self-center lg:pt-16 py-8"
+          className="mx-auto"
           src={webp}
           fallbackSrc={png}
           alt={name}
@@ -47,8 +45,8 @@ export function PlanetPanel({ data }: PlanetPanelProps) {
           height={`${imageSize}`}
         />
       </LeftPanel>
-      <RightPanel className="max-w-[400px] md:max-w-[600px] mx-auto lg:mx-0 lg:max-w-[445px] lg:pt-24 px-6 md:px-0 md:pb-8 lg:pb-0">
-        <TabGroup className="space-x-8 lg:space-x-12 pb-8 lg:pb-4">
+      <RightPanel className="col-span-full">
+        <TabGroup className="flex space-x-4 justify-center py-4">
           {data.map(({ name }, index) => (
             <Tab
               active={data[currentIndex].name === name}
@@ -59,10 +57,8 @@ export function PlanetPanel({ data }: PlanetPanelProps) {
             </Tab>
           ))}
         </TabGroup>
-        <Heading className="lg:text-[100px]" level="h3">
-          {name}
-        </Heading>
-        <Text className="mb-12">{description}</Text>
+        <Heading level="h3">{name}</Heading>
+        <Text className="pb-8">{description}</Text>
         <PlanetStatistics distance={distance} travelTime={travel} />
       </RightPanel>
     </>
@@ -76,8 +72,5 @@ function RightPanel({ children, className = "" }: WithChildren) {
   return <div className={className}>{children}</div>
 }
 function LeftPanel({ children, className = "" }: WithChildren) {
-  return <div className={className}>{children}</div>
-}
-function PageHeading({ children, className = "" }: WithChildren) {
   return <div className={className}>{children}</div>
 }

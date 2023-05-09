@@ -7,9 +7,9 @@ interface SpaceSubheadingProps extends Component {
   children: ReactNode
 }
 
-export function SpaceSubheading({ number, children }: SpaceSubheadingProps) {
+export function SpaceSubheading({ number, children, className = "" }: SpaceSubheadingProps) {
   return (
-    <span className="flex">
+    <span className={`flex mx-auto pt-2 pb-6 ${className}`}>
       <Subheading className="text-space-dark-gray font-bold">{number}</Subheading>
       <Subheading className="pl-7">{children}</Subheading>
     </span>
