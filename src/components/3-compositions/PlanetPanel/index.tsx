@@ -35,9 +35,7 @@ export function PlanetPanel({ data }: PlanetPanelProps) {
   return (
     <>
       <div className="col-span-full flex flex-col flex-wrap content-center md:content-normal md:gap-4">
-        <SpaceSubheading className="pt-0 pb-12 md:ml-16 md:mr-0" number="01">
-          Pick your destination
-        </SpaceSubheading>
+        <SpaceSubheading number="01">Pick your destination</SpaceSubheading>
         <NextImage
           className="mx-auto"
           src={webp}

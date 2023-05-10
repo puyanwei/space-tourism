@@ -33,12 +33,12 @@ export function CrewPanel({ data }: CrewPanalProps) {
   } = data[currentIndex]
 
   return (
-    <div className="flex flex-col col-span-full flex-wrap content-center">
+    <div className="flex flex-col col-span-full flex-wrap content-center md:content-normal -mb-6">
       <SpaceSubheading className="order-1 md:order-none" number="02">
         Meet your crew
       </SpaceSubheading>
       <Text
-        className="uppercase order-4 md:order-none"
+        className="uppercase order-4 md:order-none self-center md:py-4"
         theme="serif"
         color="text-space-gray"
         sizeOverride="text-[16px] md:text-[24px] lg:text-[32px]"
@@ -46,15 +46,14 @@ export function CrewPanel({ data }: CrewPanalProps) {
         {role}
       </Text>
       <Text
-        className="order-5 md:order-none uppercase lg:leading-[50px]"
+        className="order-5 md:order-none uppercase lg:leading-[50px] self-center md:pb-4"
         theme="serif"
         sizeOverride="text-[24px] md:text-[40px] lg:text-[56px]"
       >
         {name}
       </Text>
-      <Text className="order-6 md:order-none pt-4 px-6">{bio}</Text>
-      <div className="hidden md:flex md:flex-grow md:show" />
-      <CrewSlider className="py-4 space-x-4 md:pt-0 md:pb-24 order-3 md:order-none">
+      <Text className="order-6 md:order-none pt-4 px-6 self-center">{bio}</Text>
+      <CrewSlider className="py-4 md:py-8 space-x-4 order-3 md:order-none">
         {data.map(({ name }, index) => (
           <ButtonSlider
             key={`${name} ${index}}`}
@@ -63,9 +62,9 @@ export function CrewPanel({ data }: CrewPanalProps) {
           />
         ))}
       </CrewSlider>
-      <div className="h-[223px] w-[327px] relative order-2 md:order-none border-b-2 border-b-space-dark-gray -z-10 mx-auto">
+      <div className="h-[223px] w-[327px] md:w-[450px] md:h-[540px] relative order-2 md:order-none border-b-2 border-b-space-dark-gray md:border-b-transparent -z-10 mx-auto">
         <NextImage
-          className="object-contain md:fixed md:bottom-0"
+          className="object-contain md:fixed md:top-10 md:object-bottom"
           src={webp}
           fallbackSrc={png}
           alt={`${name}, ${role}`}
