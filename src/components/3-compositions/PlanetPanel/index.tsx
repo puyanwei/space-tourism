@@ -34,10 +34,8 @@ export function PlanetPanel({ data }: PlanetPanelProps) {
   const imageSize = resolveImageSize(width, 170, 300, 445)
   return (
     <>
-      <LeftPanel className="col-span-full">
-        <SpaceSubheading className="justify-center" number="01">
-          Pick your destination
-        </SpaceSubheading>
+      <div className="col-span-full flex flex-col flex-wrap content-center">
+        <SpaceSubheading number="01">Pick your destination</SpaceSubheading>
         <NextImage
           className="mx-auto"
           src={webp}
@@ -46,8 +44,6 @@ export function PlanetPanel({ data }: PlanetPanelProps) {
           width={`${imageSize}`}
           height={`${imageSize}`}
         />
-      </LeftPanel>
-      <RightPanel className="col-span-full">
         <TabGroup className="flex space-x-4 justify-center py-4">
           {data.map(({ name }, index) => (
             <Tab
@@ -62,7 +58,7 @@ export function PlanetPanel({ data }: PlanetPanelProps) {
         <Heading level="h3">{name}</Heading>
         <Text className="pb-8">{description}</Text>
         <PlanetStatistics distance={distance} travelTime={travel} />
-      </RightPanel>
+      </div>
     </>
   )
 }

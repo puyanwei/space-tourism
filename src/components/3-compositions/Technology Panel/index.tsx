@@ -33,13 +33,14 @@ export function TechnologyPanel({ data }: TechnologyPanelProps) {
   const resolvedImage = width > tabletSize ? portrait : landscape
   return (
     <>
-      <LeftPanel className="flex flex-col md:mx-8 pl-[15%]">
-        <PageHeading className="pb-32">
-          <SpaceSubheading number="03">Space launch 101</SpaceSubheading>
-        </PageHeading>
-        <div className="grid grid-cols-4">
-          <CrewSlider className="flex flex-col col-span-1 space-y-6">
-            {data.map(({ name }, index) => (
+      <div className="flex flex-col col-span-full content-center flex-wrap">
+        <SpaceSubheading className="order-1 lg:order-none" number="03">
+          Space launch 101
+        </SpaceSubheading>
+        <CrewSlider className="order-3 lg:order-none space-x-4 py-6">
+          {data.map(({ name }, index) => {
+            console.log(data[currentIndex].name, name)
+            return (
               <ButtonSlider
                 version="vertical"
                 key={`${name} ${index}}`}
@@ -48,32 +49,29 @@ export function TechnologyPanel({ data }: TechnologyPanelProps) {
               >
                 {index + 1}
               </ButtonSlider>
-            ))}
-          </CrewSlider>
-          <div className="grid col-span-3">
-            <Text className="uppercase">The Terminology...</Text>
-            <Text
-              className="uppercase py-6"
-              theme="serif"
-              sizeOverride="text-[24px] md:text-[40px] lg:text-[56px]"
-            >
-              {name}
-            </Text>
-            <Text className="max-w-[444px]">{description}</Text>
-            <div className="hidden md:flex md:flex-grow md:show" />
-          </div>
+            )
+          })}
+        </CrewSlider>
+        <Text className="uppercase order-4 lg:order-none">The Terminology...</Text>
+        <Text
+          className="uppercase py-6 order-5 lg:order-none pt-2"
+          theme="serif"
+          sizeOverride="text-[24px] md:text-[40px] lg:text-[56px]"
+        >
+          {name}
+        </Text>
+        <Text className="max-w-[444px] order-6 lg:order-none">{description}</Text>
+        <div className="hidden md:flex md:flex-grow md:show" />
+        <div className="order-2 lg:order-none relative h-1/5 -z-10">
+          <NextImage
+            className="object-contain"
+            src={resolvedImage}
+            fallbackSrc={resolvedImage}
+            alt={name}
+            fill
+          />
         </div>
-      </LeftPanel>
-      <RightPanel className="hidden md:show md:flex md:flex-col md:relative md:mx-auto">
-        <NextImage
-          className="object-contain justify-self-end flex"
-          src={resolvedImage}
-          fallbackSrc={resolvedImage}
-          alt={name}
-          width={imageWidth}
-          height={imageHeight}
-        />
-      </RightPanel>
+      </div>
     </>
   )
 }

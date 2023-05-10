@@ -8,9 +8,9 @@ const styleMap = {
     active: `bg-white`,
   },
   vertical: {
-    default: `h-20 w-20 rounded-full bg-black border-[1px] border-white hover:border-2 hover:bg-black hover:text-white font-bellefair border-transparent text-[32px]`,
-    idle: `text-white`,
-    active: `bg-white text-black`,
+    default: `h-10 w-10 lg:h-20 lg:w-20 rounded-full font-serif border-transparent text-base lg:text-[32px]`,
+    idle: `text-white bg-black border-[1px] border-white hover:border-2 hover:bg-black hover:text-white`,
+    active: `bg-white border-[1px] border-black hover:border-2 hover:bg-white hover:text-black`,
   },
 }
 interface ButtonSliderProps extends Component {
