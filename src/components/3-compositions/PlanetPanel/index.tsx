@@ -34,8 +34,10 @@ export function PlanetPanel({ data }: PlanetPanelProps) {
   const imageSize = resolveImageSize(width, 170, 300, 445)
   return (
     <>
-      <div className="col-span-full flex flex-col flex-wrap content-center">
-        <SpaceSubheading number="01">Pick your destination</SpaceSubheading>
+      <div className="col-span-full flex flex-col flex-wrap content-center md:content-normal md:gap-4">
+        <SpaceSubheading className="pt-0 pb-12 md:ml-16 md:mr-0" number="01">
+          Pick your destination
+        </SpaceSubheading>
         <NextImage
           className="mx-auto"
           src={webp}
@@ -56,19 +58,15 @@ export function PlanetPanel({ data }: PlanetPanelProps) {
           ))}
         </TabGroup>
         <Heading level="h3">{name}</Heading>
-        <Text className="pb-8 mx-6 border-b-[1px] border-space-dark-gray">{description}</Text>
-        <PlanetStatistics className="m-6" distance={distance} travelTime={travel} />
+        <Text className="pb-8 px-6 border-b-[1px] border-space-dark-gray md:self-center">
+          {description}
+        </Text>
+        <PlanetStatistics className="p-6 md:self-center" distance={distance} travelTime={travel} />
       </div>
     </>
   )
 }
 
 function TabGroup({ children, className = "" }: WithChildren) {
-  return <div className={className}>{children}</div>
-}
-function RightPanel({ children, className = "" }: WithChildren) {
-  return <div className={className}>{children}</div>
-}
-function LeftPanel({ children, className = "" }: WithChildren) {
   return <div className={className}>{children}</div>
 }

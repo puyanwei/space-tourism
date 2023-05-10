@@ -60,7 +60,7 @@ export function TechnologyPanel({ data }: TechnologyPanelProps) {
         >
           {name}
         </Text>
-        <Text className="max-w-[444px] order-6 lg:order-none mx-6">{description}</Text>
+        <Text className="max-w-[444px] order-6 lg:order-none px-6 mx-auto">{description}</Text>
         <div className="hidden md:flex md:flex-grow md:show" />
         <div className="order-2 lg:order-none relative aspect-[375/170] w-full -z-10">
           <NextImage

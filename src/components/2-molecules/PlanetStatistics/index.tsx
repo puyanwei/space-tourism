@@ -6,11 +6,13 @@ interface PlanetStatisticsProps extends Component {
   travelTime: string
 }
 
-export function PlanetStatistics({ distance, travelTime }: PlanetStatisticsProps) {
+export function PlanetStatistics({ distance, travelTime, className = "" }: PlanetStatisticsProps) {
   return (
-    <div className="flex flex-col md:grid md:grid-cols-2 uppercase py-4 md:gap-2">
-      <Text className="order-1 md:order-none lg:text-sm py-2 md:py-0 ">Avg. Distance</Text>
-      <Text className="order-3 md:order-none lg:text-sm py-2 md:py-0 ">Est. Travel Time</Text>
+    <div
+      className={`flex flex-col md:grid md:grid-cols-2 uppercase py-4 md:gap-x-24 gap-y-3 ${className}`}
+    >
+      <Text className="order-1 md:order-none lg:text-sm py-2 md:py-0">Avg. Distance</Text>
+      <Text className="order-3 md:order-none lg:text-sm py-2 md:py-0">Est. Travel Time</Text>
       <Text
         className="order-2 md:order-none pb-4 md:py-0 text-white"
         theme="serif"
