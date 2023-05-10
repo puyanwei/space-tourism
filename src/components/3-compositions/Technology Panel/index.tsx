@@ -30,7 +30,7 @@ export function TechnologyPanel({ data }: TechnologyPanelProps) {
 
   const imageWidth = resolveImageSize(width, 327, 456, 681)
   const imageHeight = resolveImageSize(width, 327, 572, 568)
-  const resolvedImage = width > tabletSize ? portrait : landscape
+  const resolvedImage = width > desktopSize ? portrait : landscape
   return (
     <>
       <div className="flex flex-col col-span-full content-center flex-wrap">

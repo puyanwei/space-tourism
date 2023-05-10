@@ -22,7 +22,7 @@ export function NavBarDesktop({ data, currentPath, className = "" }: NavBarProps
               key={`${index}-${text}`}
             >
               <Link href={href}>
-                <span className="pr-2 font-bold">{navNumber}</span>
+                <span className="hidden lg:inline pr-2 font-bold">{navNumber}</span>
                 {text}
               </Link>
             </li>
