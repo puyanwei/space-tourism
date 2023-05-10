@@ -65,7 +65,7 @@ export function CrewPanel({ data }: CrewPanalProps) {
           />
         ))}
       </CrewSlider>
-      <div className="h-[223px] w-[327px] relative order-2 md:order-none border-b-2 border-b-space-dark-gray">
+      <div className="h-[223px] w-[327px] relative order-2 md:order-none border-b-2 border-b-space-dark-gray -z-10">
         <NextImage
           className="object-contain md:fixed md:bottom-0"
           src={webp}
