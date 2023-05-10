@@ -32,8 +32,6 @@ export function CrewPanel({ data }: CrewPanalProps) {
     bio,
   } = data[currentIndex]
 
-  const imageWidth = resolveImageSize(width, 327, 456, 681)
-  const imageHeight = resolveImageSize(width, 327, 572, 568)
   return (
     <div className="flex flex-col col-span-full flex-wrap content-center">
       <SpaceSubheading className="order-1 md:order-none" number="02">
@@ -54,7 +52,7 @@ export function CrewPanel({ data }: CrewPanalProps) {
       >
         {name}
       </Text>
-      <Text className="order-6 md:order-none pt-4">{bio}</Text>
+      <Text className="order-6 md:order-none pt-4 mx-6">{bio}</Text>
       <div className="hidden md:flex md:flex-grow md:show" />
       <CrewSlider className="py-4 space-x-4 md:pt-0 md:pb-24 order-3 md:order-none">
         {data.map(({ name }, index) => (
@@ -65,7 +63,7 @@ export function CrewPanel({ data }: CrewPanalProps) {
           />
         ))}
       </CrewSlider>
-      <div className="h-[223px] w-[327px] relative order-2 md:order-none border-b-2 border-b-space-dark-gray -z-10 mx-auto">
+      <div className="h-[223px] w-[327px] relative order-2 md:order-none border-b-2 border-b-space-dark-gray -z-10 mx-6">
         <NextImage
           className="object-contain md:fixed md:bottom-0"
           src={webp}

@@ -52,19 +52,19 @@ export function TechnologyPanel({ data }: TechnologyPanelProps) {
             )
           })}
         </CrewSlider>
-        <Text className="uppercase order-4 lg:order-none">The Terminology...</Text>
+        <Text className="uppercase order-4 lg:order-none mx-auto">The Terminology...</Text>
         <Text
-          className="uppercase py-6 order-5 lg:order-none pt-2"
+          className="uppercase py-6 order-5 lg:order-none pt-2 mx-auto"
           theme="serif"
           sizeOverride="text-[24px] md:text-[40px] lg:text-[56px]"
         >
           {name}
         </Text>
-        <Text className="max-w-[444px] order-6 lg:order-none">{description}</Text>
+        <Text className="max-w-[444px] order-6 lg:order-none mx-6">{description}</Text>
         <div className="hidden md:flex md:flex-grow md:show" />
-        <div className="order-2 lg:order-none relative h-1/5 -z-10">
+        <div className="order-2 lg:order-none relative aspect-[375/170] w-full -z-10">
           <NextImage
-            className="object-contain"
+            className="object-cover"
             src={resolvedImage}
             fallbackSrc={resolvedImage}
             alt={name}

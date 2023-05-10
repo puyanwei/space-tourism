@@ -56,8 +56,8 @@ export function PlanetPanel({ data }: PlanetPanelProps) {
           ))}
         </TabGroup>
         <Heading level="h3">{name}</Heading>
-        <Text className="pb-8">{description}</Text>
-        <PlanetStatistics distance={distance} travelTime={travel} />
+        <Text className="pb-8 mx-6 border-b-[1px] border-space-dark-gray">{description}</Text>
+        <PlanetStatistics className="m-6" distance={distance} travelTime={travel} />
       </div>
     </>
   )
