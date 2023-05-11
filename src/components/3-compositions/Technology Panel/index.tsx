@@ -38,21 +38,18 @@ export function TechnologyPanel({ data }: TechnologyPanelProps) {
           Space launch 101
         </SpaceSubheading>
         <CrewSlider className="order-3 lg:order-none space-x-4 py-6">
-          {data.map(({ name }, index) => {
-            console.log(data[currentIndex].name, name)
-            return (
-              <ButtonSlider
-                version="vertical"
-                key={`${name} ${index}}`}
-                active={data[currentIndex].name === name}
-                onClick={() => handleOnClick(index)}
-              >
-                {index + 1}
-              </ButtonSlider>
-            )
-          })}
+          {data.map(({ name }, index) => (
+            <ButtonSlider
+              version="vertical"
+              key={`${name} ${index}}`}
+              active={data[currentIndex].name === name}
+              onClick={() => handleOnClick(index)}
+            >
+              {index + 1}
+            </ButtonSlider>
+          ))}
         </CrewSlider>
-        <Text className="uppercase order-4 lg:order-none mx-auto">The Terminology...</Text>
+        <Text className="uppercase order-4 lg:order-none mx-auto py-4">The Terminology...</Text>
         <Text
           className="uppercase py-6 order-5 lg:order-none pt-2 mx-auto"
           theme="serif"
@@ -61,8 +58,8 @@ export function TechnologyPanel({ data }: TechnologyPanelProps) {
           {name}
         </Text>
         <Text className="max-w-[444px] order-6 lg:order-none px-6 mx-auto">{description}</Text>
-        <div className="hidden md:flex md:flex-grow md:show" />
-        <div className="order-2 lg:order-none relative aspect-[375/170] w-full -z-10">
+        <div className="hidden md:flex md:flex-grow md:show order-7 lg:order-none" />
+        <div className="order-2 lg:order-none relative aspect-[768/310] w-full -z-10">
           <NextImage
             className="object-cover"
             src={resolvedImage}
