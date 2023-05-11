@@ -33,38 +33,42 @@ export function CrewPanel({ data }: CrewPanalProps) {
   } = data[currentIndex]
 
   return (
-    <div className="flex flex-col col-span-full flex-wrap content-center md:content-normal -mb-6">
-      <SpaceSubheading className="order-1 md:order-none" number="02">
-        Meet your crew
-      </SpaceSubheading>
-      <Text
-        className="uppercase order-4 md:order-none self-center md:py-4"
-        theme="serif"
-        color="text-space-gray"
-        sizeOverride="text-[16px] md:text-[24px] lg:text-[32px]"
-      >
-        {role}
-      </Text>
-      <Text
-        className="order-5 md:order-none uppercase lg:leading-[50px] self-center md:pb-4"
-        theme="serif"
-        sizeOverride="text-[24px] md:text-[40px] lg:text-[56px]"
-      >
-        {name}
-      </Text>
-      <Text className="order-6 md:order-none pt-4 px-6 self-center">{bio}</Text>
-      <CrewSlider className="py-4 md:py-8 space-x-4 order-3 md:order-none">
-        {data.map(({ name }, index) => (
-          <ButtonSlider
-            key={`${name} ${index}}`}
-            active={data[currentIndex].name === name}
-            onClick={() => handleOnClick(index)}
-          />
-        ))}
-      </CrewSlider>
-      <div className="w-[327px] h-[223px] md:w-[450px] md:h-[459px] relative order-2 md:order-none border-b-2 border-b-space-dark-gray md:border-b-transparent -z-10 mx-auto">
+    <div className="flex flex-col col-span-full flex-wrap content-center md:content-normal -mb-6 lg:grid lg:grid-cols-12">
+      <div className="lg:col-span-7 md:flex md:flex-col">
+        <SpaceSubheading className="order-1 md:order-none md:pl-16 lg:pl-0" number="02">
+          Meet your crew
+        </SpaceSubheading>
+        <Text
+          className="uppercase order-4 md:order-none self-center lg:self-start md:py-4"
+          theme="serif"
+          color="text-space-gray"
+          sizeOverride="text-[16px] md:text-[24px] lg:text-[32px]"
+        >
+          {role}
+        </Text>
+        <Heading
+          className="order-5 md:order-none uppercase lg:leading-[50px] self-center lg:self-start md:pb-4"
+          level="h3"
+        >
+          {name}
+        </Heading>
+        <Text className="order-6 md:order-none pt-4 px-6 lg:px-0 self-center lg:self-start lg:max-w-md">
+          {bio}
+        </Text>
+        <div className="hidden lg:show lg:flex lg:flex-grow" />
+        <CrewSlider className="py-4 md:py-8 space-x-4 order-3 md:order-none">
+          {data.map(({ name }, index) => (
+            <ButtonSlider
+              key={`${name} ${index}}`}
+              active={data[currentIndex].name === name}
+              onClick={() => handleOnClick(index)}
+            />
+          ))}
+        </CrewSlider>
+      </div>
+      <div className="relative w-[327px] h-[223px] md:w-[450px] md:h-[315px] lg:w-[568px] lg:h-[670px] order-2 md:order-none border-b-2 border-b-space-dark-gray md:border-b-transparent -z-10 mx-auto lg:col-start-8">
         <NextImage
-          className="object-contain md:fixed md:top-10 md:object-bottom"
+          className="object-contain md:fixed md:top-10 lg:top-20 md:object-bottom"
           src={webp}
           fallbackSrc={png}
           alt={`${name}, ${role}`}
