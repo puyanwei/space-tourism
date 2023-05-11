@@ -14,7 +14,7 @@ export default function Home() {
 
   return (
     <>
-      <main className="col-span-full">
+      <main className="col-span-full lg:col-span-5 lg:flex lg:flex-col lg:justify-end lg:pb-16">
         <Subheading theme="primary">So, you want to travel to</Subheading>
         <Heading level="h1">Space</Heading>
         <Text className="px-6 mx-auto">
@@ -23,7 +23,7 @@ export default function Home() {
           truly out of this world experience!
         </Text>
       </main>
-      <div className="col-span-full flex flex-col">
+      <div className="col-span-full flex flex-col lg:col-start-10 lg:justify-end lg:pb-8">
         <div className="flex flex-grow lg:hidden" />
         <div className="pb-8">
           <Button variant="explore" onClick={handleClick}>

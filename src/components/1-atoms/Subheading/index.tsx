@@ -8,7 +8,7 @@ interface SubheadingProps extends Component {
 export function Subheading({ className = "", children, theme = "primary" }: SubheadingProps) {
   return (
     <p
-      className={`tracking-[4.72px] uppercase text-base md:text-xl lg:text-3xl font-${theme} text-white ${className}`}
+      className={`tracking-[4.72px] uppercase text-base md:text-xl lg:text-[28px] text-white font-${theme} ${className}`}
     >
       {children}
     </p>
