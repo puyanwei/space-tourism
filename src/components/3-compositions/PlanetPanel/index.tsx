@@ -8,6 +8,7 @@ import { PlanetStatistics } from "@/components/2-molecules/PlanetStatistics"
 import { NextImage } from "@/components/1-atoms/NextImage"
 import { useWindowSize } from "src/hooks/useWindowSize"
 import { SpaceSubheading } from "@/components/2-molecules/SpaceSubheading"
+import { desktopSize } from "@/shared/consts"
 
 interface PlanetPanelProps extends Component {
   data: Destinations[]
@@ -32,34 +33,43 @@ export function PlanetPanel({ data }: PlanetPanelProps) {
   } = data[currentIndex]
 
   const imageSize = resolveImageSize(width, 170, 300, 445)
+  const tagSize = width > desktopSize ? "h2" : "h3"
   return (
     <>
-      <div className="col-span-full flex flex-col flex-wrap content-center md:content-normal md:gap-4">
-        <SpaceSubheading number="01">Pick your destination</SpaceSubheading>
+      <div className="col-span-full flex flex-col flex-wrap content-center md:gap-4 lg:grid lg:grid-cols-12">
+        <SpaceSubheading className="lg:col-span-full self-center" number="01">
+          Pick your destination
+        </SpaceSubheading>
         <NextImage
-          className="mx-auto"
+          className="mx-auto lg:mx-0 lg:col-start-2 lg:col-end-6 lg:pt-8"
           src={webp}
           fallbackSrc={png}
           alt={name}
           width={`${imageSize}`}
           height={`${imageSize}`}
         />
-        <TabGroup className="flex space-x-4 justify-center py-4">
-          {data.map(({ name }, index) => (
-            <Tab
-              active={data[currentIndex].name === name}
-              key={`${name}-${index}`}
-              onClick={() => handleOnClick(index)}
-            >
-              {name}
-            </Tab>
-          ))}
-        </TabGroup>
-        <Heading level="h3">{name}</Heading>
-        <Text className="pb-8 px-6 border-b-[1px] border-space-dark-gray md:self-center">
-          {description}
-        </Text>
-        <PlanetStatistics className="p-6 md:self-center" distance={distance} travelTime={travel} />
+        <div className="lg:col-start-8 lg:col-end-13 lg:flex lg:flex-col lg:pb-8">
+          <TabGroup className="flex space-x-4 justify-center lg:justify-start py-4">
+            {data.map(({ name }, index) => (
+              <Tab
+                active={data[currentIndex].name === name}
+                key={`${name}-${index}`}
+                onClick={() => handleOnClick(index)}
+              >
+                {name}
+              </Tab>
+            ))}
+          </TabGroup>
+          <Heading level={tagSize}>{name}</Heading>
+          <Text className="pb-8 px-6 lg:px-0 border-b-[1px] border-space-dark-gray md:self-center lg:self-start">
+            {description}
+          </Text>
+          <PlanetStatistics
+            className="p-6 md:self-center lg:self-start lg:p-0 lg:pt-4"
+            distance={distance}
+            travelTime={travel}
+          />
+        </div>
       </div>
     </>
   )
