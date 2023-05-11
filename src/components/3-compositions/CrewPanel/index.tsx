@@ -62,7 +62,7 @@ export function CrewPanel({ data }: CrewPanalProps) {
           />
         ))}
       </CrewSlider>
-      <div className="h-[223px] w-[327px] md:w-[450px] md:h-[540px] relative order-2 md:order-none border-b-2 border-b-space-dark-gray md:border-b-transparent -z-10 mx-auto">
+      <div className="w-[327px] h-[223px] md:w-[450px] md:h-[459px] relative order-2 md:order-none border-b-2 border-b-space-dark-gray md:border-b-transparent -z-10 mx-auto">
         <NextImage
           className="object-contain md:fixed md:top-10 md:object-bottom"
           src={webp}
@@ -75,12 +75,6 @@ export function CrewPanel({ data }: CrewPanalProps) {
   )
 }
 
-function RightPanel({ children, className = "" }: WithChildren) {
-  return <div className={className}>{children}</div>
-}
-function LeftPanel({ children, className = "" }: WithChildren) {
-  return <div className={className}>{children}</div>
-}
 function CrewSlider({ children, className = "" }: WithChildren) {
   return <div className={className}>{children}</div>
 }

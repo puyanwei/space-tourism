@@ -49,7 +49,7 @@ export function TechnologyPanel({ data }: TechnologyPanelProps) {
             </ButtonSlider>
           ))}
         </CrewSlider>
-        <Text className="uppercase order-4 lg:order-none mx-auto py-4">The Terminology...</Text>
+        <Text className="uppercase order-4 lg:order-none mx-auto pb-4">The Terminology...</Text>
         <Text
           className="uppercase py-6 order-5 lg:order-none pt-2 mx-auto"
           theme="serif"
@@ -73,15 +73,6 @@ export function TechnologyPanel({ data }: TechnologyPanelProps) {
   )
 }
 
-function RightPanel({ children, className = "" }: WithChildren) {
-  return <div className={className}>{children}</div>
-}
-function LeftPanel({ children, className = "" }: WithChildren) {
-  return <div className={className}>{children}</div>
-}
-function PageHeading({ children, className = "" }: WithChildren) {
-  return <div className={className}>{children}</div>
-}
 function CrewSlider({ children, className = "" }: WithChildren) {
   return <div className={className}>{children}</div>
 }
