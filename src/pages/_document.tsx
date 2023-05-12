@@ -14,6 +14,7 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;700&display=swap"
           rel="stylesheet"
         />
+        <link rel="shortcut icon" href="/assets/favicon-32x32.png" />
       </Head>
       <body>
         <Main />
