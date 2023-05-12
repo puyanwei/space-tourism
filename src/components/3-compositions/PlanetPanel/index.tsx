@@ -33,6 +33,7 @@ export function PlanetPanel({ data }: PlanetPanelProps) {
   } = data[currentIndex]
 
   const imageSize = resolveImageSize(width, 170, 300, 445)
+  console.log(imageSize)
   const tagSize = width > desktopSize ? "h2" : "h3"
   return (
     <>
@@ -40,14 +41,15 @@ export function PlanetPanel({ data }: PlanetPanelProps) {
         <SpaceSubheading className="lg:col-span-full self-center" number="01">
           Pick your destination
         </SpaceSubheading>
-        <NextImage
-          className="mx-auto lg:mx-0 lg:col-start-2 lg:col-end-6 lg:pt-8"
-          src={webp}
-          fallbackSrc={png}
-          alt={name}
-          width={`${imageSize}`}
-          height={`${imageSize}`}
-        />
+        <div className="relative mx-auto lg:mx-0 lg:col-start-2 lg:col-end-6 lg:pt-8">
+          <NextImage
+            src={webp}
+            fallbackSrc={png}
+            alt={name}
+            width={`${imageSize}`}
+            height={`${imageSize}`}
+          />
+        </div>
         <div className="lg:col-start-8 lg:col-end-13 lg:flex lg:flex-col lg:pb-8">
           <TabGroup className="flex space-x-4 justify-center lg:justify-start py-4">
             {data.map(({ name }, index) => (

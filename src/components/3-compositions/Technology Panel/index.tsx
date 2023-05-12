@@ -31,12 +31,21 @@ export function TechnologyPanel({ data }: TechnologyPanelProps) {
   const resolvedImage = width > desktopSize ? portrait : landscape
   return (
     <>
-      <div className="flex flex-col content-center lg:content-normal flex-wrap lg:grid lg:grid-cols-12 lg:col-span-full">
-        <SpaceSubheading className="order-1 lg:order-none lg:col-span-full" number="03">
+      <div className="grid grid-cols-1 col-span-full content-center lg:content-normal flex-wrap lg:grid lg:grid-cols-12 lg:col-span-full">
+        <SpaceSubheading className="md:pl-16 lg:col-span-full" number="03">
           Space launch 101
         </SpaceSubheading>
+        <div className="lg:hidden relative aspect-[768/310] -z-10">
+          <NextImage
+            className="object-cover"
+            src={resolvedImage}
+            fallbackSrc={resolvedImage}
+            alt={name}
+            fill
+          />
+        </div>
         <div className="lg:col-span-7 lg:grid lg:grid-cols-6">
-          <CrewSlider className="order-3 lg:order-none space-x-4 lg:space-x-0 lg:space-y-6 py-6 lg:col-span-1 lg:flex lg:flex-col">
+          <CrewSlider className="space-x-4 lg:space-x-0 lg:space-y-6 py-6 lg:col-span-1 lg:flex lg:flex-col">
             {data.map(({ name }, index) => (
               <ButtonSlider
                 version="vertical"
@@ -49,26 +58,24 @@ export function TechnologyPanel({ data }: TechnologyPanelProps) {
             ))}
           </CrewSlider>
           <div className="lg:col-span-5 lg:flex lg:flex-col lg:justify-start lg:pl-6">
-            <Text className="uppercase order-4 lg:order-none mx-auto lg:mx-0 pb-4">
-              The Terminology...
-            </Text>
+            <Text className="uppercase mx-auto lg:mx-0 pb-4">The Terminology...</Text>
             <Text
-              className="uppercase py-6 order-5 lg:order-none pt-2 mx-auto lg:mx-0"
+              className="uppercase py-6 pt-2 mx-auto lg:mx-0"
               theme="serif"
               sizeOverride="text-[24px] md:text-[40px] lg:text-[56px]"
             >
               {name}
             </Text>
-            <Text className="max-w-[444px] order-6 lg:order-none px-6 mx-auto lg:mx-0 lg:px-0  lg:max-w-[470px]">
+            <Text className="max-w-[444px] px-6 mx-auto lg:mx-0 lg:px-0  lg:max-w-[470px]">
               {description}
             </Text>
           </div>
         </div>
-        <div className="lg:col-span-5">
-          <div className="hidden md:flex md:flex-grow md:show order-7 lg:order-none" />
-          <div className="order-2 lg:order-none relative aspect-[768/310] lg:h-[550px] lg:w-[527px] w-full -z-10 lg:fixed lg:right-0 lg:bottom-24">
+        <div className="hidden lg:block lg:col-span-5">
+          <div className="hidden md:flex md:flex-grow" />
+          <div className=" lg:h-[527px] lg:w-[515px] w-full -z-10 lg:fixed lg:right-0 lg:bottom-24">
             <NextImage
-              className="object-cover lg:object-contain lg:object-right"
+              className="lg:object-contain lg:object-right"
               src={resolvedImage}
               fallbackSrc={resolvedImage}
               alt={name}
