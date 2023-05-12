@@ -17,7 +17,7 @@ interface PlanetPanelProps extends Component {
 export function PlanetPanel({ data }: PlanetPanelProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const { width } = useWindowSize()
-  if (!width) return warnAndReturnNull("screen width is empty")
+
   if (!data.length) return warnAndReturnNull("data is empty")
 
   function handleOnClick(index: number) {
@@ -33,7 +33,6 @@ export function PlanetPanel({ data }: PlanetPanelProps) {
   } = data[currentIndex]
 
   const imageSize = resolveImageSize(width, 170, 300, 445)
-  console.log(imageSize)
   const tagSize = width > desktopSize ? "h2" : "h3"
   return (
     <>

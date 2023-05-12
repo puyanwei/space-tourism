@@ -15,7 +15,6 @@ interface TechnologyPanelProps extends Component {
 export function TechnologyPanel({ data }: TechnologyPanelProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const { width } = useWindowSize()
-  if (!width) return warnAndReturnNull("screen width is empty")
   if (!data.length) return warnAndReturnNull("data is empty")
 
   function handleOnClick(index: number) {

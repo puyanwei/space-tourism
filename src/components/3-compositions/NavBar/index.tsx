@@ -17,8 +17,6 @@ export interface NavBarProps extends Component {
 export function NavBar({ data, currentPath }: NavBarProps) {
   const { width } = useWindowSize()
 
-  if (!width) return warnAndReturnNull("width is undefined")
-
   const isMobileScreenSize = tabletSize > width
 
   return (
