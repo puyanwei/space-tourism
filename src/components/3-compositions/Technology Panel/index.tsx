@@ -28,45 +28,53 @@ export function TechnologyPanel({ data }: TechnologyPanelProps) {
     description,
   } = data[currentIndex]
 
-  const imageWidth = resolveImageSize(width, 327, 456, 681)
-  const imageHeight = resolveImageSize(width, 327, 572, 568)
   const resolvedImage = width > desktopSize ? portrait : landscape
   return (
     <>
-      <div className="flex flex-col col-span-full content-center flex-wrap">
-        <SpaceSubheading className="order-1 lg:order-none" number="03">
+      <div className="flex flex-col content-center lg:content-normal flex-wrap lg:grid lg:grid-cols-12 lg:col-span-full">
+        <SpaceSubheading className="order-1 lg:order-none lg:col-span-full" number="03">
           Space launch 101
         </SpaceSubheading>
-        <CrewSlider className="order-3 lg:order-none space-x-4 py-6">
-          {data.map(({ name }, index) => (
-            <ButtonSlider
-              version="vertical"
-              key={`${name} ${index}}`}
-              active={data[currentIndex].name === name}
-              onClick={() => handleOnClick(index)}
+        <div className="lg:col-span-7 lg:grid lg:grid-cols-6">
+          <CrewSlider className="order-3 lg:order-none space-x-4 lg:space-x-0 lg:space-y-6 py-6 lg:col-span-1 lg:flex lg:flex-col">
+            {data.map(({ name }, index) => (
+              <ButtonSlider
+                version="vertical"
+                key={`${name} ${index}}`}
+                active={data[currentIndex].name === name}
+                onClick={() => handleOnClick(index)}
+              >
+                {index + 1}
+              </ButtonSlider>
+            ))}
+          </CrewSlider>
+          <div className="lg:col-span-5 lg:flex lg:flex-col lg:justify-start lg:pl-6">
+            <Text className="uppercase order-4 lg:order-none mx-auto lg:mx-0 pb-4">
+              The Terminology...
+            </Text>
+            <Text
+              className="uppercase py-6 order-5 lg:order-none pt-2 mx-auto lg:mx-0"
+              theme="serif"
+              sizeOverride="text-[24px] md:text-[40px] lg:text-[56px]"
             >
-              {index + 1}
-            </ButtonSlider>
-          ))}
-        </CrewSlider>
-        <Text className="uppercase order-4 lg:order-none mx-auto pb-4">The Terminology...</Text>
-        <Text
-          className="uppercase py-6 order-5 lg:order-none pt-2 mx-auto"
-          theme="serif"
-          sizeOverride="text-[24px] md:text-[40px] lg:text-[56px]"
-        >
-          {name}
-        </Text>
-        <Text className="max-w-[444px] order-6 lg:order-none px-6 mx-auto">{description}</Text>
-        <div className="hidden md:flex md:flex-grow md:show order-7 lg:order-none" />
-        <div className="order-2 lg:order-none relative aspect-[768/310] w-full -z-10">
-          <NextImage
-            className="object-cover"
-            src={resolvedImage}
-            fallbackSrc={resolvedImage}
-            alt={name}
-            fill
-          />
+              {name}
+            </Text>
+            <Text className="max-w-[444px] order-6 lg:order-none px-6 mx-auto lg:mx-0 lg:px-0  lg:max-w-[470px]">
+              {description}
+            </Text>
+          </div>
+        </div>
+        <div className="lg:col-span-5">
+          <div className="hidden md:flex md:flex-grow md:show order-7 lg:order-none" />
+          <div className="order-2 lg:order-none relative aspect-[768/310] lg:h-[550px] lg:w-[527px] w-full -z-10 lg:fixed lg:right-0 lg:bottom-24">
+            <NextImage
+              className="object-cover lg:object-contain lg:object-right"
+              src={resolvedImage}
+              fallbackSrc={resolvedImage}
+              alt={name}
+              fill
+            />
+          </div>
         </div>
       </div>
     </>

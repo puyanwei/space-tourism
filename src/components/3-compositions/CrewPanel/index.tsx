@@ -35,7 +35,7 @@ export function CrewPanel({ data }: CrewPanalProps) {
   return (
     <div className="flex flex-col col-span-full flex-wrap content-center md:content-normal -mb-6 lg:grid lg:grid-cols-12">
       <div className="lg:col-span-7 md:flex md:flex-col">
-        <SpaceSubheading className="order-1 md:order-none md:pl-16 lg:pl-0" number="02">
+        <SpaceSubheading className="order-1 md:order-none pl-8 md:pl-16 lg:pl-0" number="02">
           Meet your crew
         </SpaceSubheading>
         <Text
