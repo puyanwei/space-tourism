@@ -1,10 +1,10 @@
 import { useState } from "react"
 import { Text } from "@/components/1-atoms/Text"
-import { resolveImageSize, warnAndReturnNull } from "@/shared/helpers"
-import { Component, Crew, Destinations, Technology, WithChildren } from "@/shared/types"
+import { warnAndReturnNull } from "@/shared/helpers"
+import { Component, Technology, WithChildren } from "@/shared/types"
 import { NextImage } from "@/components/1-atoms/NextImage"
 import { useWindowSize } from "src/hooks/useWindowSize"
-import { desktopSize, tabletSize } from "@/shared/consts"
+import { desktopSize } from "@/shared/consts"
 import { SpaceSubheading } from "@/components/2-molecules/SpaceSubheading"
 import { ButtonSlider } from "@/components/1-atoms/ButtonSlider"
 
@@ -15,6 +15,8 @@ interface TechnologyPanelProps extends Component {
 export function TechnologyPanel({ data }: TechnologyPanelProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const { width } = useWindowSize()
+
+  if (!width) return warnAndReturnNull("width is undefined")
   if (!data.length) return warnAndReturnNull("data is empty")
 
   function handleOnClick(index: number) {

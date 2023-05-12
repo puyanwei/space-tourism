@@ -20,6 +20,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   const currentPath = usePathname() ?? ""
   const { width } = useWindowSize()
 
+  if (!width) return warnAndReturnNull("width is undefined")
   if (!currentPath) return warnAndReturnNull("currentPath url is an empty string")
 
   const backgroundImageUrl = resolveBackgroundImage(width, currentPath as PageUrls)

@@ -1,13 +1,11 @@
-import { ReactNode, useState } from "react"
-import { Tab } from "@/components/1-atoms/Tab"
+import { useState } from "react"
 import { Text } from "@/components/1-atoms/Text"
-import { resolveImageSize, warnAndReturnNull } from "@/shared/helpers"
-import { Component, Crew, Destinations, WithChildren } from "@/shared/types"
+import { warnAndReturnNull } from "@/shared/helpers"
+import { Component, Crew, WithChildren } from "@/shared/types"
 import { Heading } from "@/components/1-atoms/Heading"
-import { PlanetStatistics } from "@/components/2-molecules/PlanetStatistics"
 import { NextImage } from "@/components/1-atoms/NextImage"
 import { useWindowSize } from "src/hooks/useWindowSize"
-import { desktopSize, mobileSize, tabletSize } from "@/shared/consts"
+import { mobileSize } from "@/shared/consts"
 import { SpaceSubheading } from "@/components/2-molecules/SpaceSubheading"
 import { ButtonSlider } from "@/components/1-atoms/ButtonSlider"
 
@@ -18,6 +16,8 @@ interface CrewPanalProps extends Component {
 export function CrewPanel({ data }: CrewPanalProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const { width } = useWindowSize()
+
+  if (!width) return warnAndReturnNull("width is undefined")
   if (!data.length) return warnAndReturnNull("data is empty")
 
   function handleOnClick(index: number) {

@@ -18,6 +18,7 @@ export function PlanetPanel({ data }: PlanetPanelProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const { width } = useWindowSize()
 
+  if (!width) return warnAndReturnNull("width is undefined")
   if (!data.length) return warnAndReturnNull("data is empty")
 
   function handleOnClick(index: number) {
