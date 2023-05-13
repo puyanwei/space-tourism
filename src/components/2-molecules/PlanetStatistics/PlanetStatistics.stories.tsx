@@ -1,8 +1,8 @@
-import { PlanetStatistics } from "."
+import { PlanetStatistics as Component } from "."
 
 const meta = {
   title: "Molecules/Planet Statistics Panel",
-  component: PlanetStatistics,
+  component: Component,
 }
 
 const mockData = {
@@ -15,7 +15,7 @@ const { distance, travelTime } = mockData
 export const PlanetStatisticsPanel = {
   render: () => (
     <div className="p-2 space-y-4 max-w-md">
-      <PlanetStatistics distance={distance} travelTime={travelTime} />
+      <Component distance={distance} travelTime={travelTime} />
     </div>
   ),
 }

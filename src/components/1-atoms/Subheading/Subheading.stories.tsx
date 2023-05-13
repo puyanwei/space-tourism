@@ -1,24 +1,24 @@
 import type { Meta, StoryObj } from "@storybook/react"
-import { Subheading } from "."
+import { Subheading as Component } from "."
 
-const meta: Meta<typeof Subheading> = {
+const meta: Meta<typeof Component> = {
   title: "Atoms/Typography",
-  component: Subheading,
+  component: Component,
 }
 
 export default meta
-type Story = StoryObj<typeof Subheading>
+type Story = StoryObj<typeof Component>
 
 export const Subheadings: Story = {
   render: () => (
     <div className="space-y-2">
-      <Subheading className="subheading" theme="serif">
+      <Component className="subheading" theme="serif">
         384,400 KM
-      </Subheading>
+      </Component>
       <br />
-      <Subheading className="subheading" theme="primary">
+      <Component className="subheading" theme="primary">
         AVG. DISTANCE
-      </Subheading>
+      </Component>
     </div>
   ),
 }

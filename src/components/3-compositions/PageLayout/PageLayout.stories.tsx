@@ -1,14 +1,15 @@
-import { PageLayout } from "."
+import { PageLayout as Component } from "."
 
 const meta = {
-  title: "Atoms/Page Layout Wrapper",
+  title: "Atoms/Page Layout",
+  component: Component,
 }
 
 const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 
-export const PageLayoutWrapper = {
+export const PageLayout = {
   render: () => (
-    <PageLayout className="border-2 border-white">
+    <Component className="border-2 border-white">
       {array.map((element, index) => {
         const color = index % 2 === 0 ? `bg-blue-200` : `bg-slate-200`
         return (
@@ -17,7 +18,7 @@ export const PageLayoutWrapper = {
           </div>
         )
       })}
-    </PageLayout>
+    </Component>
   ),
 }
 

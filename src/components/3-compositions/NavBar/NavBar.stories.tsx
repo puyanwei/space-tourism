@@ -1,19 +1,19 @@
 import type { Meta, StoryObj } from "@storybook/react"
-import { NavBar } from "."
-import { data, active, hover, idle } from "./consts"
+import { NavBar as Component } from "."
+import { data } from "./consts"
 
-const meta: Meta<typeof NavBar> = {
+const meta: Meta<typeof Component> = {
   title: "Compositions/Navigation Bar",
-  component: NavBar,
+  component: Component,
 }
 
 export default meta
-type Story = StoryObj<typeof NavBar>
+type Story = StoryObj<typeof Component>
 
 export const NavigationBar: Story = {
   render: () => (
     <div className="flex flex-col gap-2">
-      <NavBar data={data} currentPath="/" />
+      <Component data={data} currentPath="/" />
     </div>
   ),
 }

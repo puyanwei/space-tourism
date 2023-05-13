@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react"
-import { Tab } from "."
+import { Tab as Component } from "."
 
-const meta: Meta<typeof Tab> = {
+const meta: Meta<typeof Component> = {
   title: "Atoms",
-  component: Tab,
+  component: Component,
 }
 
 export default meta
-type Story = StoryObj<typeof Tab>
+type Story = StoryObj<typeof Component>
 
 function handleClick() {
   console.warn("clicked")
@@ -16,15 +16,15 @@ function handleClick() {
 export const Tabs: Story = {
   render: () => (
     <div className="flex gap-4">
-      <Tab active={false} onClick={handleClick}>
+      <Component active={false} onClick={handleClick}>
         Idle
-      </Tab>
-      <Tab onClick={handleClick} active={true}>
+      </Component>
+      <Component onClick={handleClick} active={true}>
         Active
-      </Tab>
-      <Tab active={false} onClick={handleClick} buttonTextClassName="!border-b-space-gray">
+      </Component>
+      <Component active={false} onClick={handleClick} buttonTextClassName="!border-b-space-gray">
         Hover
-      </Tab>
+      </Component>
     </div>
   ),
 }

@@ -1,24 +1,24 @@
 import type { Meta, StoryObj } from "@storybook/react"
-import { Heading } from "."
+import { Heading as Component } from "."
 
-const meta: Meta<typeof Heading> = {
+const meta: Meta<typeof Component> = {
   title: "Atoms/Typography",
-  component: Heading,
+  component: Component,
 }
 
 export default meta
-type Story = StoryObj<typeof Heading>
+type Story = StoryObj<typeof Component>
 
 export const Headings: Story = {
   render: () => (
     <div className="uppercase">
-      <Heading level="h1">Earth</Heading>
-      <Heading level="h2">Venus 2</Heading>
-      <Heading level="h3">Jupiter & Saturn</Heading>
+      <Component level="h1">Earth</Component>
+      <Component level="h2">Venus 2</Component>
+      <Component level="h3">Jupiter & Saturn</Component>
       <br />
-      <Heading level="h4">Uranus, Neptune & Pluto</Heading>
+      <Component level="h4">Uranus, Neptune & Pluto</Component>
       <br />
-      <Heading level="h5">So you want to travel to space</Heading>
+      <Component level="h5">So you want to travel to space</Component>
     </div>
   ),
 }
