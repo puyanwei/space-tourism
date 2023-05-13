@@ -3,11 +3,9 @@ import "../src/pages/styles.css"
 
 const preview: Preview = {
   parameters: {
-    actions: { argTypesRegex: "^on[A-Z].*" },
-    controls: {
-      matchers: {
-        color: /(background|color)$/i,
-        date: /Date$/,
+    options: {
+      storySort: {
+        order: ["Atoms", ["Colors", "Typography", "Icons", "*"], "Molecules", "Compositions"],
       },
     },
     backgrounds: {
@@ -16,11 +14,6 @@ const preview: Preview = {
         { name: "light", value: "#ffffff" },
         { name: "dark", value: "#000000" },
       ],
-    },
-    options: {
-      storySort: {
-        order: ["Atoms", ["Typography", "Colors", "Icons", "*"], "Molecules", "Compositions"],
-      },
     },
   },
 }
