@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react"
 import { SpaceSubheading } from "."
 
 const meta: Meta<typeof SpaceSubheading> = {
-  title: "Molecules",
+  title: "Molecules/Space Subheadings",
   component: SpaceSubheading,
 }
 

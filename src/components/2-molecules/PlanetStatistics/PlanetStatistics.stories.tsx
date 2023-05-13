@@ -2,6 +2,7 @@ import { PlanetStatistics } from "."
 
 const meta = {
   title: "Molecules/Planet Statistics Panel",
+  component: PlanetStatistics,
 }
 
 const mockData = {

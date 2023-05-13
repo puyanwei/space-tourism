@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "chromatic": "npx chromatic --project-token=chpt_9132d45b1263a3f"
   },
   "dependencies": {
     "@types/node": "18.15.11",
@@ -26,15 +27,18 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "7.0.7",
-    "@storybook/addon-interactions": "7.0.7",
-    "@storybook/addon-links": "7.0.7",
-    "@storybook/addon-mdx-gfm": "7.0.7",
-    "@storybook/addon-styling": "^1.0.3",
-    "@storybook/nextjs": "7.0.7",
-    "@storybook/react": "7.0.7",
+    "@storybook/addon-essentials": "7.0.11",
+    "@storybook/addon-interactions": "7.0.11",
+    "@storybook/addon-links": "7.0.11",
+    "@storybook/addon-mdx-gfm": "7.0.11",
+    "@storybook/addon-styling": "^1.0.8",
+    "@storybook/nextjs": "7.0.11",
+    "@storybook/react": "7.0.11",
     "@storybook/testing-library": "0.1.0",
     "@total-typescript/ts-reset": "^0.4.2",
-    "storybook": "7.0.7"
-  }
+    "chromatic": "^6.17.4",
+    "storybook": "7.0.11"
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "space-tourism@0.1.0"
 }
