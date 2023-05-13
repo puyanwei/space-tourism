@@ -17,11 +17,8 @@ export function NavBarDesktop({ data, currentPath, className = "" }: NavBarProps
               : `hover:border-white/50 border-transparent`
 
           return (
-            <li
-              className={`py-8 cursor-pointer border-b-[3px] ${linkStyle}`}
-              key={`${index}-${text}`}
-            >
-              <Link href={href}>
+            <li className={`cursor-pointer border-b-[3px] ${linkStyle}`} key={`${index}-${text}`}>
+              <Link href={href} className="py-8 inline-block">
                 <span className="hidden lg:inline pr-2 font-bold">{navNumber}</span>
                 {text}
               </Link>
