@@ -15,6 +15,11 @@ export default function Document() {
           rel="stylesheet"
         />
         <link rel="shortcut icon" href="/assets/favicon-32x32.png" />
+        <style>
+          {`html {
+            background-color: black;
+          }`}
+        </style>
       </Head>
       <body>
         <Main />
