@@ -11,23 +11,23 @@ export const navbar = [
 
 export const backgroundImageMap = {
   home: {
-    lg: "/assets/home/background-home-desktop.jpg",
-    md: "/assets/home/background-home-tablet.jpg",
-    sm: "/assets/home/background-home-mobile.jpg",
+    lg: "/assets/home/background-home-desktop.avif",
+    md: "/assets/home/background-home-tablet.avif",
+    sm: "/assets/home/background-home-mobile.avif",
   },
   destination: {
-    lg: "/assets/destination/background-destination-desktop.jpg",
-    md: "/assets/destination/background-destination-tablet.jpg",
-    sm: "/assets/destination/background-destination-mobile.jpg",
+    lg: "/assets/destination/background-destination-desktop.avif",
+    md: "/assets/destination/background-destination-tablet.avif",
+    sm: "/assets/destination/background-destination-mobile.avif",
   },
   crew: {
-    lg: "/assets/crew/background-crew-desktop.jpg",
-    md: "/assets/crew/background-crew-tablet.jpg",
-    sm: "/assets/crew/background-crew-mobile.jpg",
+    lg: "/assets/crew/background-crew-desktop.avif",
+    md: "/assets/crew/background-crew-tablet.avif",
+    sm: "/assets/crew/background-crew-mobile.avif",
   },
   technology: {
-    lg: "/assets/technology/background-technology-desktop.jpg",
-    md: "/assets/technology/background-technology-tablet.jpg",
-    sm: "/assets/technology/background-technology-mobile.jpg",
+    lg: "/assets/technology/background-technology-desktop.avif",
+    md: "/assets/technology/background-technology-tablet.avif",
+    sm: "/assets/technology/background-technology-mobile.avif",
   },
 } as const
