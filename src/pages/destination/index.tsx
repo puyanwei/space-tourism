@@ -2,6 +2,7 @@ import fs from "fs"
 import { PlanetPanel } from "@/components/3-compositions/PlanetPanel"
 import { Data } from "@/shared/types"
 import { GetStaticProps } from "next"
+import { HeadTitle } from "@/components/1-atoms/HeadTitle"
 
 interface DestinationsProps {
   data: Data
@@ -20,5 +21,10 @@ export const getStaticProps: GetStaticProps<DestinationsProps> = async () => {
 
 export default function Destination({ data }: DestinationsProps) {
   const { destinations } = data
-  return <PlanetPanel data={destinations} />
+  return (
+    <>
+      <HeadTitle title="Space Tourism - Pick Your Destination" meta="Space Tourism Destination" />
+      <PlanetPanel data={destinations} />
+    </>
+  )
 }

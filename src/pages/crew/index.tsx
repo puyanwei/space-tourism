@@ -1,3 +1,4 @@
+import { HeadTitle } from "@/components/1-atoms/HeadTitle"
 import { CrewPanel } from "@/components/3-compositions/CrewPanel"
 import { Data } from "@/shared/types"
 import fs from "fs"
@@ -20,5 +21,10 @@ export const getStaticProps: GetStaticProps<CrewProps> = async () => {
 
 export default function Crew({ data }: CrewProps) {
   const { crew } = data
-  return <CrewPanel data={crew} />
+  return (
+    <>
+      <HeadTitle title="Space Tourism - Meet Your Crew!" meta="Space Tourism Crew" />
+      <CrewPanel data={crew} />
+    </>
+  )
 }

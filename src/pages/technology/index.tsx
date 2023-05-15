@@ -2,6 +2,7 @@ import fs from "fs"
 import { TechnologyPanel } from "@/components/3-compositions/Technology Panel"
 import { Data } from "@/shared/types"
 import { GetStaticProps } from "next"
+import { HeadTitle } from "@/components/1-atoms/HeadTitle"
 
 interface TechnologyProps {
   data: Data
@@ -20,5 +21,10 @@ export const getStaticProps: GetStaticProps<TechnologyProps> = async () => {
 
 export default function Technology({ data }: TechnologyProps) {
   const { technology } = data
-  return <TechnologyPanel data={technology} />
+  return (
+    <>
+      <HeadTitle title="Space Tourism - Technology" meta="Space Tourism Technology" />
+      <TechnologyPanel data={technology} />
+    </>
+  )
 }
