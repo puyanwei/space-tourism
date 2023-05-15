@@ -41,21 +41,21 @@ export function NavBarMobile({ data, currentPath, className = "" }: NavBarProps)
         >
           <ul className="flex flex-col">
             {data.map(({ href, text }, index) => {
-              const navNumber = index < 10 ? `0${index}` : index
               const resolvedText = `/${text.toLowerCase()}`
               const resolvedCurrentPath = currentPath === "/" ? "/home" : currentPath
               const linkStyle =
                 resolvedCurrentPath === resolvedText ? `border-white` : `border-transparent`
 
               return (
-                <Link href={href} key={`${index}-${text}`}>
-                  <li
-                    className={`px-8 py-4  cursor-pointer border-r-[3px] ${linkStyle}`}
-                    onClick={() => setIsMenuOpen(false)}
-                  >
+                <li
+                  className={`px-8 py-4 cursor-pointer border-r-[3px] ${linkStyle}`}
+                  key={`${index}-${text}`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <Link className="py-8" href={href} key={`${index}-${text}`}>
                     {text}
-                  </li>
-                </Link>
+                  </Link>
+                </li>
               )
             })}
           </ul>

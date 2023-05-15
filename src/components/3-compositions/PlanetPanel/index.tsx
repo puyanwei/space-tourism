@@ -37,11 +37,11 @@ export function PlanetPanel({ data }: PlanetPanelProps) {
   const tagSize = width > desktopSize ? "h2" : "h3"
   return (
     <>
-      <div className="col-span-full flex flex-col flex-wrap content-center md:gap-4 lg:grid lg:grid-cols-12">
-        <SpaceSubheading className="lg:col-span-full self-center" number="01">
+      <div className="flex flex-col flex-wrap content-center col-span-full md:gap-4 lg:grid lg:grid-cols-12">
+        <SpaceSubheading className="self-center lg:col-span-full" number="01">
           Pick your destination
         </SpaceSubheading>
-        <div className="relative mx-auto lg:mx-0 lg:col-start-2 lg:col-end-6 lg:pt-8">
+        <div className="relative mx-auto lg:mx-0 lg:col-start-2 lg:col-end-6 lg:pt-8 -z-10">
           <NextImage
             src={webp}
             fallbackSrc={png}
@@ -51,7 +51,7 @@ export function PlanetPanel({ data }: PlanetPanelProps) {
           />
         </div>
         <div className="lg:col-start-8 lg:col-end-13 lg:flex lg:flex-col lg:pb-8">
-          <TabGroup className="flex space-x-4 justify-center lg:justify-start py-4">
+          <TabGroup className="flex justify-center py-4 space-x-4 lg:justify-start">
             {data.map(({ name }, index) => (
               <Tab
                 active={data[currentIndex].name === name}

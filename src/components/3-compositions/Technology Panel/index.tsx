@@ -32,7 +32,7 @@ export function TechnologyPanel({ data }: TechnologyPanelProps) {
   const resolvedImage = width > desktopSize ? portrait : landscape
   return (
     <>
-      <div className="grid grid-cols-1 col-span-full content-center lg:content-normal flex-wrap lg:grid lg:grid-cols-12 lg:col-span-full lg:pl-8">
+      <div className="flex flex-col col-span-full lg:grid lg:grid-cols-12 lg:col-span-full lg:pl-8">
         <SpaceSubheading className="md:pl-16 lg:col-span-full lg:pl-0" number="03">
           Space launch 101
         </SpaceSubheading>
