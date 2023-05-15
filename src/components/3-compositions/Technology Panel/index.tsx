@@ -32,8 +32,8 @@ export function TechnologyPanel({ data }: TechnologyPanelProps) {
   const resolvedImage = width > desktopSize ? portrait : landscape
   return (
     <>
-      <div className="grid grid-cols-1 col-span-full content-center lg:content-normal flex-wrap lg:grid lg:grid-cols-12 lg:col-span-full">
-        <SpaceSubheading className="md:pl-16 lg:col-span-full" number="03">
+      <div className="grid grid-cols-1 col-span-full content-center lg:content-normal flex-wrap lg:grid lg:grid-cols-12 lg:col-span-full lg:pl-8">
+        <SpaceSubheading className="md:pl-16 lg:col-span-full lg:pl-0" number="03">
           Space launch 101
         </SpaceSubheading>
         <div className="lg:hidden relative aspect-[768/310] -z-10">
@@ -61,9 +61,10 @@ export function TechnologyPanel({ data }: TechnologyPanelProps) {
           <div className="lg:col-span-5 lg:flex lg:flex-col lg:justify-start lg:pl-6">
             <Text className="uppercase mx-auto lg:mx-0 pb-4">The Terminology...</Text>
             <Text
-              className="uppercase py-6 pt-2 mx-auto lg:mx-0"
+              className="uppercase py-6 pt-2 mx-auto lg:mx-0 "
               theme="serif"
               sizeOverride="text-[24px] md:text-[40px] lg:text-[56px]"
+              color="text-white"
             >
               {name}
             </Text>
