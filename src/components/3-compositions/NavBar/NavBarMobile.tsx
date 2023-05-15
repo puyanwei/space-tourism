@@ -37,7 +37,7 @@ export function NavBarMobile({ data, currentPath, className = "" }: NavBarProps)
       </span>
       <div className={`fixed inset-0 overflow-hidden pointer-events-none ${pointerEventStatus}`}>
         <menu
-          className={`pt-[118px] font-primary text-base letter-spacing-[2.7px] uppercase text-white backdrop-blur-2xl bg-space-gray/10 h-screen md:h-[90px] absolute right-0 top-0 w-[60%] z-0 transform ease-in-out duration-300 ${slideAnimation} ${className}`}
+          className={`pt-[118px] font-primary text-base letter-spacing-[2.7px] uppercase text-white backdrop-blur-2xl bg-space-gray/10 h-screen md:h-[90px] absolute right-0 top-0 w-[60%] z-20 transform ease-in-out duration-300 ${slideAnimation} ${className}`}
         >
           <ul className="flex flex-col">
             {data.map(({ href, text }, index) => {
@@ -53,7 +53,6 @@ export function NavBarMobile({ data, currentPath, className = "" }: NavBarProps)
                     className={`px-8 py-4  cursor-pointer border-r-[3px] ${linkStyle}`}
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    <b className="pr-2">{navNumber}</b>
                     {text}
                   </li>
                 </Link>
