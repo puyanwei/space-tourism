@@ -36,7 +36,7 @@ export function NavBarMobile({ data, currentPath, className = "" }: NavBarProps)
         )}
       </span>
       <div className={`fixed inset-0 overflow-hidden pointer-events-none ${pointerEventStatus}`}>
-        <div
+        <menu
           className={`pt-[118px] font-primary text-base letter-spacing-[2.7px] uppercase text-white backdrop-blur-2xl bg-space-gray/10 h-screen md:h-[90px] absolute right-0 top-0 w-[60%] z-0 transform ease-in-out duration-300 ${slideAnimation} ${className}`}
         >
           <ul className="flex flex-col">
@@ -60,7 +60,7 @@ export function NavBarMobile({ data, currentPath, className = "" }: NavBarProps)
               )
             })}
           </ul>
-        </div>
+        </menu>
       </div>
     </div>
   )
