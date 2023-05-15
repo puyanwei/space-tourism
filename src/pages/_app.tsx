@@ -27,7 +27,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <div className="relative">
       <BackgroundImage url={backgroundImageUrl} />
-      <HeaderSection className="sticky">
+      <HeaderSection className="sticky z-10">
         <Line />
         <Logo className="fixed left-6 top-6 md:left-14 md:top-14 scale-[.835] md:scale-100" />
         <NavBar data={navbar} currentPath={currentPath as PageUrls} />

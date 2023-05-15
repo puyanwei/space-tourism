@@ -39,7 +39,7 @@ export function CrewPanel({ data }: CrewPanalProps) {
         <SpaceSubheading className="md:pl-16 lg:pl-0" number="02">
           Meet your crew
         </SpaceSubheading>
-        <div className="-z-10 md:hidden relative w-[327px] h-[223px] border-b-2 border-b-space-dark-gray mx-auto lg:col-start-8">
+        <div className="md:hidden relative w-[327px] h-[223px] border-b-2 border-b-space-dark-gray mx-auto lg:col-start-8">
           <NextImage
             className="object-contain"
             src={webp}
@@ -75,7 +75,7 @@ export function CrewPanel({ data }: CrewPanalProps) {
           ))}
         </CrewSlider>
       </div>
-      <div className="hidden md:block relative md:w-full md:h-full lg:w-[568px] lg:h-[670px]  border-b-2 border-b-space-dark-gray md:border-b-transparent mx-auto lg:col-start-8 lg:self-end">
+      <div className="hidden md:block relative md:w-full md:h-full lg:w-[568px] lg:h-[670px] border-b-2 border-b-space-dark-gray md:border-b-transparent mx-auto lg:col-start-8 lg:self-end">
         <NextImage
           className="object-contain md:fixed lg:top-20 md:object-bottom"
           src={webp}

@@ -41,7 +41,7 @@ export function PlanetPanel({ data }: PlanetPanelProps) {
         <SpaceSubheading className="self-center lg:col-span-full" number="01">
           Pick your destination
         </SpaceSubheading>
-        <div className="relative mx-auto lg:mx-0 lg:col-start-2 lg:col-end-6 lg:pt-8 -z-10">
+        <div className="relative mx-auto lg:mx-0 lg:col-start-2 lg:col-end-6 lg:pt-8">
           <NextImage
             src={webp}
             fallbackSrc={png}
@@ -63,7 +63,7 @@ export function PlanetPanel({ data }: PlanetPanelProps) {
             ))}
           </TabGroup>
           <Heading level={tagSize}>{name}</Heading>
-          <Text className="pb-8 px-6 lg:px-0 border-b-[1px] border-space-dark-gray md:self-center lg:self-start">
+          <Text className="pb-8 px-6 lg:px-0 border-b-[1px] border-space-dark-gray md:self-center lg:self-start lg:h-[170px]">
             {description}
           </Text>
           <PlanetStatistics

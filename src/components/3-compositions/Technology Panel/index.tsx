@@ -46,7 +46,7 @@ export function TechnologyPanel({ data }: TechnologyPanelProps) {
           />
         </div>
         <div className="lg:col-span-7 lg:grid lg:grid-cols-6">
-          <CrewSlider className="space-x-4 lg:space-x-0 lg:space-y-6 py-6 lg:col-span-1 lg:flex lg:flex-col">
+          <CrewSlider className="py-6 space-x-4 lg:space-x-0 lg:space-y-6 lg:col-span-1 lg:flex lg:flex-col">
             {data.map(({ name }, index) => (
               <ButtonSlider
                 version="vertical"
@@ -59,9 +59,9 @@ export function TechnologyPanel({ data }: TechnologyPanelProps) {
             ))}
           </CrewSlider>
           <div className="lg:col-span-5 lg:flex lg:flex-col lg:justify-start lg:pl-6">
-            <Text className="uppercase mx-auto lg:mx-0 pb-4">The Terminology...</Text>
+            <Text className="pb-4 mx-auto uppercase lg:mx-0">The Terminology...</Text>
             <Text
-              className="uppercase py-6 pt-2 mx-auto lg:mx-0 "
+              className="py-6 pt-2 mx-auto uppercase lg:mx-0 "
               theme="serif"
               sizeOverride="text-[24px] md:text-[40px] lg:text-[56px]"
               color="text-white"
@@ -75,7 +75,7 @@ export function TechnologyPanel({ data }: TechnologyPanelProps) {
         </div>
         <div className="hidden lg:block lg:col-span-5">
           <div className="hidden md:flex md:flex-grow" />
-          <div className=" lg:h-[527px] lg:w-[515px] w-full -z-10 lg:fixed lg:right-0 lg:bottom-24">
+          <div className=" lg:h-[527px] lg:w-[515px] w-full lg:fixed lg:right-0 lg:bottom-24">
             <NextImage
               className="lg:object-contain lg:object-right"
               src={resolvedImage}
