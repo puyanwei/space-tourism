@@ -13,10 +13,11 @@ export function ImagePreloader({ imageUrls }: ImagePreloaderProps) {
           src={url}
           fallbackSrc={url}
           alt="image preloader"
-          height="0"
-          width="0"
+          height="768"
+          width="310"
           key={index}
           priority={true}
+          loading="eager"
         />
       ))}
     </>

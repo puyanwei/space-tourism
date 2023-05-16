@@ -11,6 +11,7 @@ interface NextImageProps extends Component {
   sizes?: string
   fill?: boolean
   priority?: boolean
+  loading?: "lazy" | "eager" | undefined
 }
 
 type SafeNumber = number | `${number}`
@@ -25,6 +26,7 @@ export function NextImage({
   sizes,
   fill = false,
   priority = false,
+  loading = "lazy",
 }: NextImageProps) {
   const [onError, setOnError] = useState(false)
 
@@ -49,6 +51,7 @@ export function NextImage({
       fill={fill}
       quality="100"
       priority={priority}
+      loading={loading}
     />
   )
 }
