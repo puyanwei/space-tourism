@@ -7,6 +7,7 @@ import { useWindowSize } from "src/hooks/useWindowSize"
 import { desktopSize } from "@/shared/consts"
 import { SpaceSubheading } from "@/components/2-molecules/SpaceSubheading"
 import { ButtonSlider } from "@/components/1-atoms/ButtonSlider"
+import { ImagePreloader } from "@/components/2-molecules/ImagePreloader"
 
 interface TechnologyPanelProps extends Component {
   data: Technology[]
@@ -30,9 +31,16 @@ export function TechnologyPanel({ data }: TechnologyPanelProps) {
   } = data[currentIndex]
 
   const resolvedImage = width > desktopSize ? portrait : landscape
+  const imageUrls = data.reduce((accumulator: string[], currentValue) => {
+    const array: string[] = []
+    array.push(currentValue.images.portrait)
+    array.push(currentValue.images.landscape)
+    return [...accumulator, ...array]
+  }, [])
   return (
     <>
       <div className="flex flex-col col-span-full lg:grid lg:grid-cols-12 lg:col-span-full lg:pl-8">
+        <ImagePreloader imageUrls={imageUrls} />
         <SpaceSubheading className="md:pl-16 lg:col-span-full lg:pl-0" number="03">
           Space launch 101
         </SpaceSubheading>

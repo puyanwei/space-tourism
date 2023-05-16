@@ -9,6 +9,7 @@ import { NextImage } from "@/components/1-atoms/NextImage"
 import { useWindowSize } from "src/hooks/useWindowSize"
 import { SpaceSubheading } from "@/components/2-molecules/SpaceSubheading"
 import { desktopSize } from "@/shared/consts"
+import { ImagePreloader } from "@/components/2-molecules/ImagePreloader"
 
 interface PlanetPanelProps extends Component {
   data: Destinations[]
@@ -35,9 +36,17 @@ export function PlanetPanel({ data }: PlanetPanelProps) {
 
   const imageSize = resolveImageSize(width, 170, 300, 445)
   const tagSize = width > desktopSize ? "h2" : "h3"
+  const imageUrls = data.reduce((accumulator: string[], currentValue) => {
+    const array: string[] = []
+    array.push(currentValue.images.png)
+    array.push(currentValue.images.webp)
+    return [...accumulator, ...array]
+  }, [])
+
   return (
     <>
       <div className="flex flex-col flex-wrap content-center col-span-full md:gap-4 lg:grid lg:grid-cols-12">
+        <ImagePreloader imageUrls={imageUrls} />
         <SpaceSubheading className="self-center lg:col-span-full" number="01">
           Pick your destination
         </SpaceSubheading>

@@ -8,6 +8,7 @@ import { useWindowSize } from "src/hooks/useWindowSize"
 import { mobileSize } from "@/shared/consts"
 import { SpaceSubheading } from "@/components/2-molecules/SpaceSubheading"
 import { ButtonSlider } from "@/components/1-atoms/ButtonSlider"
+import { ImagePreloader } from "@/components/2-molecules/ImagePreloader"
 
 interface CrewPanalProps extends Component {
   data: Crew[]
@@ -33,8 +34,16 @@ export function CrewPanel({ data }: CrewPanalProps) {
 
   const tagSize = width > mobileSize ? "h3" : "h5"
 
+  const imageUrls = data.reduce((accumulator: string[], currentValue) => {
+    const array: string[] = []
+    array.push(currentValue.images.png)
+    array.push(currentValue.images.webp)
+    return [...accumulator, ...array]
+  }, [])
+
   return (
     <div className="flex flex-col -mb-6 col-span-full lg:grid lg:grid-cols-12 lg:justify-end">
+      <ImagePreloader imageUrls={imageUrls} />
       <div className="relative flex flex-col lg:pl-16 lg:col-span-7">
         <SpaceSubheading className="md:pl-16 lg:pl-0" number="02">
           Meet your crew
