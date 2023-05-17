@@ -47,7 +47,7 @@ export function PlanetPanel({ data }: PlanetPanelProps) {
     <>
       <div className="flex flex-col flex-wrap content-center col-span-full md:gap-4 lg:grid lg:grid-cols-12">
         <ImagePreloader imageUrls={imageUrls} />
-        <SpaceSubheading className="self-center lg:col-span-full" number="01">
+        <SpaceSubheading className="self-center lg:col-span-full lg:pl-16" number="01">
           Pick your destination
         </SpaceSubheading>
         <div className="relative mx-auto lg:mx-0 lg:col-start-2 lg:col-end-6 lg:pt-8">
@@ -59,7 +59,7 @@ export function PlanetPanel({ data }: PlanetPanelProps) {
             height={`${imageSize}`}
           />
         </div>
-        <div className="lg:col-start-8 lg:col-end-13 lg:flex lg:flex-col lg:pb-8">
+        <div className="lg:col-start-7 xl:col-start-8 lg:col-end-12 xl:col-end-13 lg:flex lg:flex-col lg:pb-8">
           <TabGroup className="flex justify-center py-4 space-x-4 lg:justify-start">
             {data.map(({ name }, index) => (
               <Tab

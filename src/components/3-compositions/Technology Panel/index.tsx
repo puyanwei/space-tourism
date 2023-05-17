@@ -72,12 +72,12 @@ export function TechnologyPanel({ data }: TechnologyPanelProps) {
             <Text
               className="py-6 pt-2 mx-auto uppercase lg:mx-0 "
               theme="serif"
-              sizeOverride="text-[24px] md:text-[40px] lg:text-[56px]"
+              sizeOverride="text-[24px] md:text-[40px] lg:text-[56px] lg:leading-snug lg:max-w-[360px] xl:max-w-lg"
               color="text-white"
             >
               {name}
             </Text>
-            <Text className="max-w-[444px] px-6 mx-auto lg:mx-0 lg:px-0  lg:max-w-[470px]">
+            <Text className="max-w-[444px] px-6 mx-auto lg:mx-0 lg:px-0  lg:max-w-[360px] xl:max-w-lg">
               {description}
             </Text>
           </div>

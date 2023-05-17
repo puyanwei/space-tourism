@@ -30,7 +30,7 @@ export function CrewPanel({ data }: CrewPanalProps) {
 
   return (
     <div className="flex flex-col -mb-6 col-span-full lg:grid lg:grid-cols-12 lg:justify-end">
-      <div className="relative flex flex-col lg:pl-16 lg:col-span-7">
+      <div className="relative flex flex-col lg:pl-16 lg:col-span-6">
         <SpaceSubheading className="md:pl-16 lg:pl-0" number="02">
           Meet your crew
         </SpaceSubheading>
@@ -77,7 +77,7 @@ export function CrewPanel({ data }: CrewPanalProps) {
           ))}
         </CrewSlider>
       </div>
-      <div className="hidden md:block relative md:w-full md:h-full lg:w-[568px] lg:h-[670px] border-b-2 border-b-space-dark-gray md:border-b-transparent mx-auto lg:col-start-8 lg:self-end">
+      <div className="hidden md:block relative md:w-full md:h-full lg:w-[568px] lg:h-[670px] border-b-2 border-b-space-dark-gray md:border-b-transparent mx-auto lg:col-start-7 lg:self-end">
         {data.map((crew, index) => {
           const visibility = data[index].name === name ? "" : "hidden"
           return (
@@ -89,6 +89,7 @@ export function CrewPanel({ data }: CrewPanalProps) {
               key={`${index}-${crew}`}
               fill
               loading="eager"
+              priority={true}
             />
           )
         })}
