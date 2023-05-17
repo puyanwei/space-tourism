@@ -8,7 +8,6 @@ import { useWindowSize } from "src/hooks/useWindowSize"
 import { mobileSize } from "@/shared/consts"
 import { SpaceSubheading } from "@/components/2-molecules/SpaceSubheading"
 import { ButtonSlider } from "@/components/1-atoms/ButtonSlider"
-import { ImagePreloader } from "@/components/2-molecules/ImagePreloader"
 
 interface CrewPanalProps extends Component {
   data: Crew[]
@@ -25,37 +24,31 @@ export function CrewPanel({ data }: CrewPanalProps) {
     setCurrentIndex(index)
   }
 
-  const {
-    name,
-    images: { png, webp },
-    role,
-    bio,
-  } = data[currentIndex]
+  const { name, role, bio } = data[currentIndex]
 
   const tagSize = width > mobileSize ? "h3" : "h5"
 
-  const imageUrls = data.reduce((accumulator: string[], currentValue) => {
-    const array: string[] = []
-    array.push(currentValue.images.png)
-    array.push(currentValue.images.webp)
-    return [...accumulator, ...array]
-  }, [])
-
   return (
     <div className="flex flex-col -mb-6 col-span-full lg:grid lg:grid-cols-12 lg:justify-end">
-      <ImagePreloader imageUrls={imageUrls} />
       <div className="relative flex flex-col lg:pl-16 lg:col-span-7">
         <SpaceSubheading className="md:pl-16 lg:pl-0" number="02">
           Meet your crew
         </SpaceSubheading>
         <div className="md:hidden relative w-[327px] h-[223px] border-b-2 border-b-space-dark-gray mx-auto lg:col-start-8">
-          <NextImage
-            className="object-contain"
-            src={webp}
-            fallbackSrc={png}
-            alt={`${name}, ${role}`}
-            fill
-          />
+          {data.map((crew, index) => {
+            const visibility = data[index].name === name ? "" : "hidden"
+            return (
+              <NextImage
+                className={`${visibility} object-contain`}
+                src={crew.images.webp}
+                fallbackSrc={crew.images.png}
+                alt={`${name}, ${role}`}
+                key={`${index}-${crew}`}
+                loading="eager"
+                fill
+              />
+            )
+          })}
         </div>
         <Text
           className="self-center uppercase lg:self-start lg:py-4 lg:pt-32"
@@ -78,20 +71,27 @@ export function CrewPanel({ data }: CrewPanalProps) {
           {data.map(({ name }, index) => (
             <ButtonSlider
               key={`${name} ${index}}`}
-              active={data[currentIndex].name === name}
+              active={data[index].name === data[currentIndex].name}
               onClick={() => handleOnClick(index)}
             />
           ))}
         </CrewSlider>
       </div>
       <div className="hidden md:block relative md:w-full md:h-full lg:w-[568px] lg:h-[670px] border-b-2 border-b-space-dark-gray md:border-b-transparent mx-auto lg:col-start-8 lg:self-end">
-        <NextImage
-          className="object-contain md:fixed lg:top-20 md:object-bottom"
-          src={webp}
-          fallbackSrc={png}
-          alt={`${name}, ${role}`}
-          fill
-        />
+        {data.map((crew, index) => {
+          const visibility = data[index].name === name ? "" : "hidden"
+          return (
+            <NextImage
+              className={`${visibility} object-contain md:fixed lg:top-20 md:object-bottom`}
+              src={crew.images.webp}
+              fallbackSrc={crew.images.png}
+              alt={`${name}, ${role}`}
+              key={`${index}-${crew}`}
+              fill
+              loading="eager"
+            />
+          )
+        })}
       </div>
     </div>
   )

@@ -37,6 +37,7 @@ export function TechnologyPanel({ data }: TechnologyPanelProps) {
     array.push(currentValue.images.landscape)
     return [...accumulator, ...array]
   }, [])
+
   return (
     <>
       <div className="flex flex-col col-span-full lg:grid lg:grid-cols-12 lg:col-span-full lg:pl-8">
