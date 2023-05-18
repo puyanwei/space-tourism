@@ -54,6 +54,7 @@ export function TechnologyPanel({ data }: TechnologyPanelProps) {
             fallbackSrc={resolvedImage}
             alt={name}
             fill
+            loading="eager"
           />
         </div>
         <div className="lg:col-span-7 lg:grid lg:grid-cols-6">
@@ -93,6 +94,7 @@ export function TechnologyPanel({ data }: TechnologyPanelProps) {
               fallbackSrc={resolvedImage}
               alt={name}
               fill
+              loading="eager"
             />
           </div>
         </div>

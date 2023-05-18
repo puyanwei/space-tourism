@@ -51,6 +51,7 @@ export function PlanetPanel({ data }: PlanetPanelProps) {
             alt={name}
             width={`${imageSize}`}
             height={`${imageSize}`}
+            loading="eager"
           />
         </div>
         <div className="lg:col-start-7 xl:col-start-8 lg:col-end-12 xl:col-end-13 lg:flex lg:flex-col lg:pb-8">
