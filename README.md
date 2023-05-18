@@ -10,12 +10,12 @@ Storybook UI Component library - https://645f6cf043b9eed632121c8d-xkrxhxavvy.chr
 <img src="https://github.com/puyanwei/space-tourism/assets/14803518/c144b143-946a-4a06-9a5a-47af9c3c7267" alt="destination page" width="700px" height="50%">
 <img src="https://github.com/puyanwei/space-tourism/assets/14803518/e80e922d-6fc0-4800-8fe8-7c2a4706531e" alt="crew page" width="700px" height="50%">
 <img src="https://github.com/puyanwei/space-tourism/assets/14803518/e9eb662e-b7ef-44e5-acb1-884ef0392be7" alt="technology page" width="700px" height="50%">
-
-<img src="https://github.com/puyanwei/space-tourism/assets/14803518/d15a925d-8d6d-4853-880d-2107ead7c02c" alt="technology page" width="70%%">
-<img src="https://github.com/puyanwei/space-tourism/assets/14803518/652d2e3d-209c-409d-b8bf-a81ab4655191" alt="technology page" width="70%%">
-<img src="https://github.com/puyanwei/space-tourism/assets/14803518/286cf46a-a608-483a-9b55-ae4f3cbeb65a" alt="technology page" width="70%%">
-<img src="https://github.com/puyanwei/space-tourism/assets/14803518/6122f726-5cc1-4c06-b164-d82ecc657e91" alt="technology page" width="70%%">
-
+----
+<img src="https://github.com/puyanwei/space-tourism/assets/14803518/d15a925d-8d6d-4853-880d-2107ead7c02c" alt="technology page" width="600px">
+<img src="https://github.com/puyanwei/space-tourism/assets/14803518/652d2e3d-209c-409d-b8bf-a81ab4655191" alt="technology page" width="600px">
+<img src="https://github.com/puyanwei/space-tourism/assets/14803518/286cf46a-a608-483a-9b55-ae4f3cbeb65a" alt="technology page" width="600px">
+<img src="https://github.com/puyanwei/space-tourism/assets/14803518/6122f726-5cc1-4c06-b164-d82ecc657e91" alt="technology page" width="600px">
+----
 <img src="https://github.com/puyanwei/space-tourism/assets/14803518/18b01aa5-315f-4bf6-9a50-9965aa9395e0" alt="technology page" width="400px" height="700px">
 <img src="https://github.com/puyanwei/space-tourism/assets/14803518/114fb431-06c0-4adb-add4-126d83bb3dbd" alt="technology page" width="400px" height="700px">
 <img src="https://github.com/puyanwei/space-tourism/assets/14803518/cf84f9c0-5c02-4c42-9b2b-c9449a84f4ac" alt="technology page" width="400px" height="700px">
