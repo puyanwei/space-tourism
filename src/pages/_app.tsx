@@ -20,8 +20,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   const currentPath = usePathname() ?? ""
   const { width } = useWindowSize()
 
-  console.log(usePathname())
-
   if (!width) return warnAndReturnNull("width is undefined")
   if (!currentPath) return warnAndReturnNull("currentPath url is an empty string")
 
