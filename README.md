@@ -44,7 +44,7 @@ yarn dev
 ##### Using Next 13 App folder (beta)
 
 - RootLayout (`Layout.tsx` on the root of app) is the suggested place to load fonts (in their new way) which is done on the server. But since I need the Navbar on all pages, this needs to be added here too so there is conflict of having a server and client loaded component not being compatible. This needs to be done client side because of the `activeLink` logic, and there is no way to load via server and client on the same file or separating them
-- Multiple font loading does not seem to work with tailwind. The custom variable names do not seem to get picked up in `tailwind.config`
+- Multiple font loading does not seem to work with tailwind. The custom variable names do not seem to get picked up in `tailwind.config`.
 
 ##### Other Issues
 
