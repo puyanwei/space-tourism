@@ -15,6 +15,7 @@ interface CrewPanalProps extends Component {
 
 export function CrewPanel({ data }: CrewPanalProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [crew, setCrew] = useState(data[currentIndex])
   const { width } = useWindowSize()
 
   if (!width) return warnAndReturnNull("width is undefined")
@@ -22,9 +23,10 @@ export function CrewPanel({ data }: CrewPanalProps) {
 
   function handleOnClick(index: number) {
     setCurrentIndex(index)
+    setCrew(data[index])
   }
 
-  const { name, role, bio } = data[currentIndex]
+  const { name, role, bio } = crew
 
   const tagSize = width > mobileSize ? "h3" : "h5"
 
@@ -36,7 +38,7 @@ export function CrewPanel({ data }: CrewPanalProps) {
         </SpaceSubheading>
         <div className="md:hidden relative w-[327px] h-[223px] border-b-2 border-b-space-dark-gray mx-auto lg:col-start-8">
           {data.map((crew, index) => {
-            const visibility = data[index].name === name ? "" : "hidden"
+            const visibility = index === currentIndex ? "" : "opacity-[0.01] pointer-events-none"
             return (
               <NextImage
                 className={`${visibility} object-contain`}
@@ -70,8 +72,8 @@ export function CrewPanel({ data }: CrewPanalProps) {
         <CrewSlider className="py-4 space-x-4 md:py-8 lg:absolute lg:bottom-10 lg:left-50">
           {data.map(({ name }, index) => (
             <ButtonSlider
-              key={`${name} ${index}}`}
-              active={data[index].name === data[currentIndex].name}
+              key={`${index}-${name}`}
+              active={index === currentIndex}
               onClick={() => handleOnClick(index)}
             />
           ))}
@@ -79,13 +81,13 @@ export function CrewPanel({ data }: CrewPanalProps) {
       </div>
       <div className="hidden md:block relative md:w-full md:h-full lg:w-[568px] lg:h-[670px] border-b-2 border-b-space-dark-gray md:border-b-transparent mx-auto lg:col-start-7 lg:self-end">
         {data.map((crew, index) => {
-          const visibility = data[index].name === name ? "" : "hidden"
+          const visibility = index === currentIndex ? "" : "opacity-[0.01] pointer-events-none"
           return (
             <NextImage
               className={`${visibility} object-contain md:fixed lg:top-20 md:object-bottom`}
               src={crew.images.webp}
               fallbackSrc={crew.images.png}
-              alt={`${name}, ${role}`}
+              alt={`${crew.name}, ${crew.role}`}
               key={`${index}-${crew}`}
               fill
               loading="eager"

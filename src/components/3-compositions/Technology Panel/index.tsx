@@ -15,6 +15,7 @@ interface TechnologyPanelProps extends Component {
 
 export function TechnologyPanel({ data }: TechnologyPanelProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [technology, setTechnology] = useState(data[currentIndex])
   const { width } = useWindowSize()
 
   if (!width) return warnAndReturnNull("width is undefined")
@@ -22,13 +23,14 @@ export function TechnologyPanel({ data }: TechnologyPanelProps) {
 
   function handleOnClick(index: number) {
     setCurrentIndex(index)
+    setTechnology(data[index])
   }
 
   const {
     name,
     images: { portrait, landscape },
     description,
-  } = data[currentIndex]
+  } = technology
 
   const resolvedImage = width > desktopSize ? portrait : landscape
   const imageUrls = data.reduce((accumulator: string[], currentValue) => {
@@ -60,7 +62,7 @@ export function TechnologyPanel({ data }: TechnologyPanelProps) {
               <ButtonSlider
                 version="vertical"
                 key={`${name} ${index}}`}
-                active={data[currentIndex].name === name}
+                active={technology.name === name}
                 onClick={() => handleOnClick(index)}
               >
                 {index + 1}

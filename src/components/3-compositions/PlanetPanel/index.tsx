@@ -9,7 +9,6 @@ import { NextImage } from "@/components/1-atoms/NextImage"
 import { useWindowSize } from "src/hooks/useWindowSize"
 import { SpaceSubheading } from "@/components/2-molecules/SpaceSubheading"
 import { desktopSize } from "@/shared/consts"
-import { ImagePreloader } from "@/components/2-molecules/ImagePreloader"
 
 interface PlanetPanelProps extends Component {
   data: Destinations[]
@@ -17,6 +16,7 @@ interface PlanetPanelProps extends Component {
 
 export function PlanetPanel({ data }: PlanetPanelProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [planet, setPlanet] = useState(data[currentIndex])
   const { width } = useWindowSize()
 
   if (!width) return warnAndReturnNull("width is undefined")
@@ -24,6 +24,7 @@ export function PlanetPanel({ data }: PlanetPanelProps) {
 
   function handleOnClick(index: number) {
     setCurrentIndex(index)
+    setPlanet(data[index])
   }
 
   const {
@@ -32,21 +33,14 @@ export function PlanetPanel({ data }: PlanetPanelProps) {
     distance,
     travel,
     images: { png, webp },
-  } = data[currentIndex]
+  } = planet
 
   const imageSize = resolveImageSize(width, 170, 300, 445)
   const tagSize = width > desktopSize ? "h2" : "h3"
-  const imageUrls = data.reduce((accumulator: string[], currentValue) => {
-    const array: string[] = []
-    array.push(currentValue.images.png)
-    array.push(currentValue.images.webp)
-    return [...accumulator, ...array]
-  }, [])
 
   return (
     <>
       <div className="flex flex-col flex-wrap content-center col-span-full md:gap-4 lg:grid lg:grid-cols-12">
-        <ImagePreloader imageUrls={imageUrls} />
         <SpaceSubheading className="self-center lg:col-span-full lg:pl-16" number="01">
           Pick your destination
         </SpaceSubheading>
@@ -63,7 +57,7 @@ export function PlanetPanel({ data }: PlanetPanelProps) {
           <TabGroup className="flex justify-center py-4 space-x-4 lg:justify-start">
             {data.map(({ name }, index) => (
               <Tab
-                active={data[currentIndex].name === name}
+                active={planet.name === name}
                 key={`${name}-${index}`}
                 onClick={() => handleOnClick(index)}
               >
