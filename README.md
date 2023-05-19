@@ -39,6 +39,20 @@ yarn install
 yarn dev
 ```
 
+### Lighthouse Report
+
+Chrome's lighthouse report in dev tools helps developers analyse their websites in certain categories. Once finishing the site I used the report to improve performance and other categories.
+
+More information about lighthouse reports [here](https://developer.chrome.com/docs/lighthouse/overview/)
+
+#### Mobile report
+
+![image](https://github.com/puyanwei/space-tourism/assets/14803518/2f8c071b-3fb3-4cd1-a695-57a07a12da7d)
+
+#### Desktop report
+
+![image](https://github.com/puyanwei/space-tourism/assets/14803518/3f13446f-a6f7-4a1f-a526-1837f27cd21f)
+
 ### Issues
 
 ##### Using Next 13 App folder (beta)
